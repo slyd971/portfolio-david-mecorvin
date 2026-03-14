@@ -1,9 +1,11 @@
 export const projects = [
   {
     slug: "aldi",
-
     title: "ALDI",
     category: "Pilotage de projets digitaux retail",
+    sector: "Retail",
+    duration: "1 an",
+    roleLabel: "Chef de projet digital",
 
     shortDescription:
       "Pilotage de projets digitaux 360° pour les plateformes ALDI avec coordination des équipes métiers, IT et agences externes.",
@@ -11,8 +13,11 @@ export const projects = [
     heroDescription:
       "Chef de projet digital au sein du pôle digital ALDI, responsable du pilotage des projets digitaux sur les différents canaux propriétaires en collaboration avec les équipes internes et partenaires externes.",
 
+    challenge:
+      "Structurer le pilotage de plusieurs sujets digitaux, aligner les besoins métier avec la vision produit et fluidifier la collaboration entre équipes internes, IT et agences externes.",
+
     context:
-      "Au sein du pôle digital ALDI, la mission consiste à piloter des projets digitaux stratégiques et coordonner les différents acteurs impliqués (métiers, IT, agences externes). L’objectif est de garantir l’alignement entre la vision produit, les besoins métier et la delivery technique tout en optimisant les processus internes de gestion de projet.",
+      "Au sein du pôle digital ALDI, la mission consiste à piloter des projets digitaux stratégiques et coordonner les différents acteurs impliqués. L’enjeu principal est de garantir l’alignement entre la vision produit, les besoins métier et la delivery technique tout en optimisant les processus internes de gestion de projet.",
 
     objectives: [
       "Piloter les projets digitaux des plateformes ALDI",
@@ -42,6 +47,28 @@ export const projects = [
 
     methodology: ["Cycle en V adapté avec pratiques Agile"],
 
+    keyMetrics: [
+      { value: "+30%", label: "opt-in recrutés en 2025" },
+      { value: "360°", label: "pilotage multi-canaux" },
+      { value: "1 an", label: "mission sur le pôle digital" },
+    ],
+
+    deliverables: [
+      "Backlog produit",
+      "Epics & User Stories",
+      "Ateliers métiers",
+      "Pilotage run & évolutions",
+      "Coordination delivery",
+    ],
+
+    skillsUsed: [
+      "Pilotage projet",
+      "Product thinking",
+      "Priorisation",
+      "Animation transverse",
+      "Coordination IT / métiers",
+    ],
+
     achievements: [
       {
         title: "Structuration du pilotage produit",
@@ -70,19 +97,27 @@ export const projects = [
       "Intégration des cartes cadeaux dématérialisées sur les plateformes digitales",
       "Amélioration des processus de gestion de projet via l’outil Monday",
     ],
+
+    whatItSays:
+      "Ce projet illustre ma capacité à piloter des sujets digitaux complexes dans un environnement retail exigeant, en faisant le lien entre stratégie, métier, produit et delivery.",
   },
 
   {
     slug: "bnp-paribas",
-
     title: "BNP Paribas",
     category: "Product Owner Digital",
+    sector: "Banque",
+    duration: "1 an+",
+    roleLabel: "Product Owner",
 
     shortDescription:
       "Pilotage des parcours digitaux web et mobile au sein du pôle COE Digital BNP Paribas.",
 
     heroDescription:
       "Product Owner responsable de la conception et de l’évolution des parcours clients digitaux dans l’écosystème BNP Paribas.",
+
+    challenge:
+      "Améliorer plusieurs parcours clients digitaux sensibles tout en alignant besoins métier, design produit, backlog et coordination entre Product Owners et squads IT.",
 
     context:
       "Au sein du pôle COE Digital BNP Paribas, la mission consiste à concevoir et piloter plusieurs parcours clients sur les plateformes web et mobile afin d’améliorer l’expérience utilisateur et la performance des services digitaux.",
@@ -116,6 +151,28 @@ export const projects = [
 
     methodology: ["Approche hybride Agile / Cycle en V"],
 
+    keyMetrics: [
+      { value: "Web + mobile", label: "périmètre de parcours" },
+      { value: "Multi-parcours", label: "avis, rdv, réclamations, contact" },
+      { value: "1 an+", label: "mission Product Owner" },
+    ],
+
+    deliverables: [
+      "Expression de besoin",
+      "Epics & User Stories",
+      "Backlog produit",
+      "Ateliers UX",
+      "Pilotage releases",
+    ],
+
+    skillsUsed: [
+      "Product Ownership",
+      "Parcours client",
+      "Priorisation",
+      "Coordination squads",
+      "Design alignment",
+    ],
+
     achievements: [
       {
         title: "Harmonisation design produit",
@@ -139,19 +196,27 @@ export const projects = [
       "Collaboration inter-squads améliorée",
       "Pilotage produit plus structuré",
     ],
+
+    whatItSays:
+      "Ce projet montre ma capacité à tenir un rôle de Product Owner sur des parcours digitaux à fort enjeu, avec une vraie exigence sur la valeur produit, l’UX et la coordination transverse.",
   },
 
   {
     slug: "bforbank",
-
     title: "BforBank",
     category: "Refonte web & webmarketing",
+    sector: "Banque",
+    duration: "7 mois",
+    roleLabel: "Chef de projet web",
 
     shortDescription:
       "Pilotage de la refonte du site web BforBank et coordination des opérations marketing digitales.",
 
     heroDescription:
       "Chef de projet Web & Webmarketing en charge de la refonte fonctionnelle et design du site BforBank et du pilotage du run marketing digital.",
+
+    challenge:
+      "Piloter une refonte de site dans un contexte de repositionnement de marque, tout en gérant le run existant et en améliorant la coordination entre métiers, marketing et delivery.",
 
     context:
       "Dans le cadre d’un nouveau positionnement de marque, la mission consiste à piloter la refonte complète du site BforBank et améliorer la coordination entre les différentes équipes métiers impliquées dans les opérations digitales.",
@@ -176,6 +241,28 @@ export const projects = [
 
     methodology: ["Approche semi-Agile hybride"],
 
+    keyMetrics: [
+      { value: "85%", label: "focus refonte site" },
+      { value: "15%", label: "focus run & opérations" },
+      { value: "7 mois", label: "durée de mission" },
+    ],
+
+    deliverables: [
+      "Refonte site",
+      "Backlog RUN",
+      "Ateliers UX/UI",
+      "Recette",
+      "Coordination opérations web",
+    ],
+
+    skillsUsed: [
+      "Pilotage refonte",
+      "Coordination agence",
+      "Webmarketing",
+      "Recette",
+      "Semi-Agile delivery",
+    ],
+
     achievements: [
       {
         title: "Refonte du site web",
@@ -199,19 +286,27 @@ export const projects = [
       "Site aligné avec la stratégie SEO et accessibilité",
       "Optimisation des process internes de gestion des opérations web",
     ],
+
+    whatItSays:
+      "Ce projet met en avant ma capacité à piloter une refonte complète de site tout en gardant une forte maîtrise du run, de la coordination métier et de la delivery.",
   },
 
   {
     slug: "dataiku",
-
     title: "Dataiku",
     category: "Pilotage web & performance digitale",
+    sector: "Tech / SaaS",
+    duration: "1 an 7 mois",
+    roleLabel: "Chef de projet web",
 
     shortDescription:
       "Gestion des projets web liés au site Dataiku.com avec un focus sur SEO, analytics et performance digitale.",
 
     heroDescription:
       "Chef de projet web responsable de la gestion des projets liés au site Dataiku.com dans un environnement international.",
+
+    challenge:
+      "Structurer la gestion des projets web dans un environnement international, améliorer la performance du site et renforcer la visibilité SEO et analytics.",
 
     context:
       "Au sein du pôle marketing web Dataiku, la mission consiste à piloter l’ensemble des projets web et améliorer la performance digitale du site dans un contexte international.",
@@ -242,6 +337,28 @@ export const projects = [
 
     methodology: ["Agile (sprints de 2 à 3 semaines)"],
 
+    keyMetrics: [
+      { value: "+30%", label: "trafic direct entre 2021 et 2022" },
+      { value: "2-3 semaines", label: "rythme de sprint" },
+      { value: "1 an 7 mois", label: "durée de mission" },
+    ],
+
+    deliverables: [
+      "Refonte sections site",
+      "Audit SEO",
+      "Tracking analytics",
+      "Rapports KPI",
+      "Newsletter interne projet",
+    ],
+
+    skillsUsed: [
+      "Pilotage web",
+      "SEO",
+      "Analytics",
+      "Coordination agences",
+      "Communication transverse",
+    ],
+
     achievements: [
       {
         title: "Refonte de sections du site",
@@ -270,6 +387,9 @@ export const projects = [
       "Amélioration de la gestion des projets web",
       "Meilleure visibilité interne sur les projets digitaux",
     ],
+
+    whatItSays:
+      "Ce projet montre ma capacité à piloter des projets web dans un environnement international avec une forte dimension performance, SEO, analytics et coordination transverse.",
   },
 ];
 

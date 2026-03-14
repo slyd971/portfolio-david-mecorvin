@@ -11,6 +11,9 @@ import {
   Wrench,
   BarChart3,
   CheckCircle2,
+  Building2,
+  Clock3,
+  Layers3,
 } from "lucide-react";
 import { getProjectBySlug, projects } from "@/data/projects";
 
@@ -57,22 +60,69 @@ export default async function ProjectPage({ params }) {
       </header>
 
       <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-10 lg:py-16">
-        <div className="rounded-[1.8rem] border border-white/10 bg-white/5 p-6 shadow-[0_0_40px_rgba(37,99,235,0.06)] sm:rounded-[2rem] sm:p-8">
-          <p className="text-xs uppercase tracking-[0.24em] text-[#60A5FA] sm:text-sm">
-            Projet
-          </p>
+        <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="rounded-[1.8rem] border border-white/10 bg-white/5 p-6 shadow-[0_0_40px_rgba(37,99,235,0.06)] sm:rounded-[2rem] sm:p-8">
+            <p className="text-xs uppercase tracking-[0.24em] text-[#60A5FA] sm:text-sm">
+              Projet
+            </p>
 
-          <h1 className="mt-4 text-3xl font-semibold sm:text-4xl md:text-5xl">
-            {project.title}
-          </h1>
+            <h1 className="mt-4 text-3xl font-semibold sm:text-4xl md:text-5xl">
+              {project.title}
+            </h1>
 
-          <p className="mt-3 text-sm font-medium text-[#93C5FD] sm:text-base">
-            {project.category}
-          </p>
+            <p className="mt-3 text-sm font-medium text-[#93C5FD] sm:text-base">
+              {project.category}
+            </p>
 
-          <p className="mt-5 max-w-3xl text-sm leading-7 text-white/72 sm:text-base sm:leading-8">
-            {project.heroDescription}
-          </p>
+            <p className="mt-5 max-w-3xl text-sm leading-7 text-white/72 sm:text-base sm:leading-8">
+              {project.heroDescription}
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-2">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-4 py-2 text-sm text-white/75">
+                <Building2 size={15} className="text-[#60A5FA]" />
+                {project.sector}
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-4 py-2 text-sm text-white/75">
+                <Clock3 size={15} className="text-[#60A5FA]" />
+                {project.duration}
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-4 py-2 text-sm text-white/75">
+                <Layers3 size={15} className="text-[#60A5FA]" />
+                {project.roleLabel}
+              </span>
+            </div>
+          </div>
+
+          <div className="rounded-[1.8rem] border border-white/10 bg-gradient-to-br from-[#0B1738] via-[#0E1D49] to-[#12275F] p-6 shadow-[0_0_60px_rgba(37,99,235,0.10)] sm:rounded-[2rem] sm:p-8">
+            <div className="flex h-full flex-col justify-between">
+              <div>
+                <p className="text-xs uppercase tracking-[0.24em] text-[#93C5FD] sm:text-sm">
+                  Snapshot
+                </p>
+                <h2 className="mt-4 text-2xl font-semibold">Vue d’ensemble</h2>
+                <p className="mt-4 text-sm leading-7 text-white/72">
+                  Une lecture rapide du projet, de son périmètre et de son impact.
+                </p>
+              </div>
+
+              <div className="mt-8 grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+                {project.keyMetrics.map((item) => (
+                  <div
+                    key={item.label}
+                    className="rounded-[1.4rem] border border-white/10 bg-white/5 p-5"
+                  >
+                    <div className="text-2xl font-semibold text-[#BFDBFE]">
+                      {item.value}
+                    </div>
+                    <div className="mt-2 text-sm leading-6 text-white/65">
+                      {item.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -96,39 +146,17 @@ export default async function ProjectPage({ params }) {
         </div>
       </section>
 
-      {project.keyMetrics && (
-        <section className="mx-auto max-w-7xl px-4 pb-6 sm:px-6 sm:pb-8 lg:px-10 lg:pb-10">
-          <div className="grid gap-4 md:grid-cols-3">
-            {project.keyMetrics.map((item) => (
-              <div
-                key={item.label}
-                className="rounded-[1.6rem] border border-white/10 bg-white/5 p-6"
-              >
-                <div className="text-3xl font-semibold text-[#93C5FD]">
-                  {item.value}
-                </div>
-                <div className="mt-2 text-sm leading-6 text-white/65">
-                  {item.label}
-                </div>
-              </div>
-            ))}
+      <section className="mx-auto max-w-7xl px-4 pb-6 sm:px-6 sm:pb-8 lg:px-10 lg:pb-10">
+        <div className="rounded-[1.8rem] border border-white/10 bg-white/5 p-6 sm:rounded-[2rem] sm:p-8">
+          <div className="flex items-center gap-3">
+            <BarChart3 size={20} className="text-[#60A5FA]" />
+            <h2 className="text-2xl font-semibold">Challenge</h2>
           </div>
-        </section>
-      )}
-
-      {project.challenge && (
-        <section className="mx-auto max-w-7xl px-4 pb-6 sm:px-6 sm:pb-8 lg:px-10 lg:pb-10">
-          <div className="rounded-[1.8rem] border border-white/10 bg-white/5 p-6 sm:rounded-[2rem] sm:p-8">
-            <div className="flex items-center gap-3">
-              <BarChart3 size={20} className="text-[#60A5FA]" />
-              <h2 className="text-2xl font-semibold">Challenge</h2>
-            </div>
-            <p className="mt-4 max-w-4xl text-sm leading-7 text-white/72 sm:text-base sm:leading-8">
-              {project.challenge}
-            </p>
-          </div>
-        </section>
-      )}
+          <p className="mt-4 max-w-4xl text-sm leading-7 text-white/72 sm:text-base sm:leading-8">
+            {project.challenge}
+          </p>
+        </div>
+      </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-6 sm:px-6 sm:pb-8 lg:px-10 lg:pb-10">
         <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr] lg:gap-5">
@@ -200,44 +228,38 @@ export default async function ProjectPage({ params }) {
         </div>
       </section>
 
-      {(project.deliverables || project.skillsUsed) && (
-        <section className="mx-auto max-w-7xl px-4 pb-6 sm:px-6 sm:pb-8 lg:px-10 lg:pb-10">
-          <div className="grid gap-4 lg:grid-cols-2">
-            {project.deliverables && (
-              <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-6 sm:rounded-[2rem]">
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 size={20} className="text-[#60A5FA]" />
-                  <h2 className="text-xl font-semibold">Livrables</h2>
-                </div>
-                <ul className="mt-4 space-y-3 text-sm leading-7 text-white/72">
-                  {project.deliverables.map((item) => (
-                    <li key={item}>• {item}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {project.skillsUsed && (
-              <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-6 sm:rounded-[2rem]">
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 size={20} className="text-[#60A5FA]" />
-                  <h2 className="text-xl font-semibold">Compétences mobilisées</h2>
-                </div>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {project.skillsUsed.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border border-white/10 bg-black/20 px-4 py-2 text-sm text-white/72"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
+      <section className="mx-auto max-w-7xl px-4 pb-6 sm:px-6 sm:pb-8 lg:px-10 lg:pb-10">
+        <div className="grid gap-4 lg:grid-cols-2">
+          <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-6 sm:rounded-[2rem]">
+            <div className="flex items-center gap-3">
+              <CheckCircle2 size={20} className="text-[#60A5FA]" />
+              <h2 className="text-xl font-semibold">Livrables</h2>
+            </div>
+            <ul className="mt-4 space-y-3 text-sm leading-7 text-white/72">
+              {project.deliverables.map((item) => (
+                <li key={item}>• {item}</li>
+              ))}
+            </ul>
           </div>
-        </section>
-      )}
+
+          <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-6 sm:rounded-[2rem]">
+            <div className="flex items-center gap-3">
+              <CheckCircle2 size={20} className="text-[#60A5FA]" />
+              <h2 className="text-xl font-semibold">Compétences mobilisées</h2>
+            </div>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {project.skillsUsed.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/10 bg-black/20 px-4 py-2 text-sm text-white/72"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-6 sm:px-6 sm:pb-8 lg:px-10 lg:pb-10">
         <div className="rounded-[1.8rem] border border-white/10 bg-white/5 p-6 sm:rounded-[2rem] sm:p-8">
