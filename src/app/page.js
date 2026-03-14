@@ -120,7 +120,7 @@ export default function Page() {
     },
   ];
 
-  const clients = ["ALDI", "BNP Paribas", "BforBank", "Dataiku", "Crédit Agricole", "Parrot", "SBM"];
+  const clients = ["ALDI", "BNP Paribas", "BforBank", "Dataiku", "Printemps", "Crédit Agricole", "Parrot", "SBM"];
 
   const tools = [
     "Jira",
