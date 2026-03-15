@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   ArrowLeft,
@@ -66,9 +67,23 @@ export default async function ProjectPage({ params }) {
               Projet
             </p>
 
-            <h1 className="mt-4 text-3xl font-semibold sm:text-4xl md:text-5xl">
-              {project.title}
-            </h1>
+            <div className="flex items-center gap-4">
+
+  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white p-2">
+    <Image
+      src={project.logo}
+      alt={project.title}
+      width={40}
+      height={40}
+      className="object-contain"
+    />
+  </div>
+
+  <h1 className="text-3xl font-semibold sm:text-4xl md:text-5xl">
+    {project.title}
+  </h1>
+
+</div>
 
             <p className="mt-3 text-sm font-medium text-[#93C5FD] sm:text-base">
               {project.category}
