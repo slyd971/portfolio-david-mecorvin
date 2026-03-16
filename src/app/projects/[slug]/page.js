@@ -70,12 +70,10 @@ export default async function ProjectPage({ params }) {
             <div className="mt-4 flex items-center gap-4">
               {project.logo && (
                 <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white p-2">
-                  <Image
+                  <img
                     src={project.logo}
                     alt={project.title}
-                    width={40}
-                    height={40}
-                    className="object-contain"
+                    className="h-10 w-10object-contain"
                   />
                 </div>
               )}
