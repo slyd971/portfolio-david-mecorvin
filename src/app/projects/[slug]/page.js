@@ -68,20 +68,20 @@ export default async function ProjectPage({ params }) {
             </p>
 
             <div className="mt-4 flex items-center gap-4">
-              {project.logo && (
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white p-2">
-                  <img
-                    src={project.logo}
-                    alt={project.title}
-                    className="h-10 w-10object-contain"
-                  />
-                </div>
-              )}
 
-              <h1 className="text-3xl font-semibold sm:text-4xl md:text-5xl">
-                {project.title}
-              </h1>
-            </div>
+  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white p-2 shadow-sm">
+    <img
+      src={project.logo}
+      alt={project.title}
+      className="h-10 w-10 object-contain"
+    />
+  </div>
+
+  <h1 className="text-3xl font-semibold sm:text-4xl md:text-5xl">
+    {project.title}
+  </h1>
+
+</div>
 
             <p className="mt-3 text-sm font-medium text-[#93C5FD] sm:text-base">
               {project.category}

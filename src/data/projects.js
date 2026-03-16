@@ -2,7 +2,7 @@ export const projects = [
   {
     slug: "aldi",
     title: "ALDI",
-    logos: "aldi.png",
+    logos: "/logos/aldi.png",
     category: "Pilotage de projets digitaux retail",
     sector: "Retail",
     duration: "1 an",
@@ -106,7 +106,7 @@ export const projects = [
   {
     slug: "bnp-paribas",
     title: "BNP Paribas",
-    logos: "bnp-paribas.png",
+    logos: "/logos/bnp.png",
     category: "Product Owner Digital",
     sector: "Banque",
     duration: "1 an+",
@@ -206,7 +206,7 @@ export const projects = [
   {
     slug: "bforbank",
     title: "BforBank",
-    logos: "bforbank.png",
+    logos: "/logos/bforbank.png",
     category: "Refonte web & webmarketing",
     sector: "Banque",
     duration: "7 mois",
@@ -297,7 +297,7 @@ export const projects = [
   {
     slug: "dataiku",
     title: "Dataiku",
-    logos: "dataiku.png",
+    logos: "/logos/dataiku.png",
     category: "Pilotage web & performance digitale",
     sector: "Tech / SaaS",
     duration: "1 an 7 mois",
