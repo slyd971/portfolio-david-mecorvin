@@ -204,7 +204,7 @@ export default function Page() {
             <h1 className="max-w-5xl text-4xl font-semibold leading-[0.98] tracking-tight sm:text-5xl md:text-6xl xl:text-[5.6rem]">
               Je pilote les projets digitaux <span className="text-white/35">avec une logique</span>{" "}
               <span className="bg-gradient-to-r from-[#DBEAFE] via-[#60A5FA] to-[#2563EB] bg-clip-text text-transparent">
-                produit, business et delivery.
+                produit, business et delivery!
               </span>
             </h1>
 
