@@ -2,6 +2,8 @@ export const projects = [
   {
     slug: "aldi",
     title: "ALDI",
+    metaDescription:
+      "Pilotage 360° des projets digitaux ALDI par David Mecorvin : coordination IT, métiers et agences, jeux concours multicanaux, +30% d'opt-in en 2025.",
     logos: "/logos/aldi.png",
     category: "Pilotage de projets digitaux retail",
     sector: "Retail",
@@ -106,6 +108,8 @@ export const projects = [
   {
     slug: "bnp-paribas",
     title: "BNP Paribas",
+    metaDescription:
+      "Product Owner David Mecorvin sur les parcours digitaux BNP Paribas : contact client, rendez-vous, réclamations, alignement métier, UX et delivery Agile.",
     logos: "/logos/bnp.png",
     category: "Product Owner Digital",
     sector: "Banque",
@@ -206,6 +210,8 @@ export const projects = [
   {
     slug: "bforbank",
     title: "BforBank",
+    metaDescription:
+      "Pilotage par David Mecorvin de la refonte du site BforBank et du webmarketing : nouveau positionnement de marque, coordination agence et opérations.",
     logos: "/logos/bforbank.png",
     category: "Refonte web & webmarketing",
     sector: "Banque",
@@ -297,6 +303,8 @@ export const projects = [
   {
     slug: "dataiku",
     title: "Dataiku",
+    metaDescription:
+      "David Mecorvin, Chef de projet web Dataiku.com à l'international : SEO, analytics et performance digitale, +30% de trafic direct entre 2021 et 2022.",
     logos: "/logos/dataiku.png",
     category: "Pilotage web & performance digitale",
     sector: "Tech / SaaS",
@@ -399,6 +407,8 @@ export const projects = [
   {
     slug: "printemps",
     title: "Printemps",
+    metaDescription:
+      "David Mecorvin, Product Owner sur la refonte du site vitrine Printemps et l'intégration du programme fidélité, migration technique d'Hybris vers Drupal.",
     logos: null,
     category: "Refonte site & programme fidélité",
     sector: "Retail",
@@ -491,6 +501,8 @@ export const projects = [
   {
     slug: "parrot",
     title: "Parrot",
+    metaDescription:
+      "David Mecorvin, Chef de projet E-commerce Parrot (B2C et B2B) à l'international : merchandising, stratégie commerciale, CA européen multiplié par 3.",
     logos: null,
     category: "Pilotage E-commerce B2B & B2C",
     sector: "Tech / Électronique grand public",

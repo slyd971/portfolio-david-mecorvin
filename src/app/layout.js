@@ -16,9 +16,31 @@ const plexSans = IBM_Plex_Sans({
   display: "swap",
 });
 
+const siteUrl = "https://portfolio-david-mecorvin.vercel.app";
+const title = "David Mecorvin — Chef de Projet Digital / Product Owner Senior | Banque, Retail, E-commerce";
+const description =
+  "Chef de Projet Digital / Product Owner Senior, 12+ ans d'expérience en gestion de projet et product ownership (banque, retail, e-commerce). Disponible mission/CDI.";
+
 export const metadata = {
-  title: "David Mecorvin — Chef de Projet Digital / Product Owner",
-  description: "Portfolio de David Mecorvin",
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title,
+    description,
+    url: siteUrl,
+    siteName: "David Mecorvin — Portfolio",
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
 };
 
 export default function RootLayout({ children }) {
