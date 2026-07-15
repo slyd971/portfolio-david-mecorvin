@@ -395,6 +395,186 @@ export const projects = [
     whatItSays:
       "Ce projet montre ma capacité à piloter des projets web dans un environnement international avec une forte dimension performance, SEO, analytics et coordination transverse.",
   },
+
+  {
+    slug: "printemps",
+    title: "Printemps",
+    logos: null,
+    category: "Refonte site & programme fidélité",
+    sector: "Retail",
+    duration: "2019 – 2021",
+    roleLabel: "Product Owner",
+
+    shortDescription:
+      "Refonte du site vitrine Printemps et intégration du programme fidélité, migration d’Hybris vers Drupal.",
+
+    heroDescription:
+      "Product Owner en charge de la refonte du site vitrine Printemps et de l’intégration du programme fidélité dans l’écosystème digital, dans le cadre d’une migration technique d’Hybris vers Drupal.",
+
+    challenge:
+      "Piloter une refonte technique complexe (migration Hybris vers Drupal) tout en intégrant le programme fidélité sans rupture de service ni perte de données clients.",
+
+    context:
+      "Dans le cadre de la mission chez Smile Open Source Solutions, le projet consiste à refondre le site vitrine de Printemps et à intégrer le programme fidélité dans le nouvel écosystème digital, en coordination avec les équipes métier, développement, intégration et QA.",
+
+    objectives: [
+      "Refondre le site vitrine Printemps",
+      "Intégrer le programme fidélité dans le nouvel écosystème digital",
+      "Sécuriser la migration de contenus d’Hybris vers Drupal",
+      "Garantir la continuité de service pendant la transition",
+    ],
+
+    role: [
+      "Pilotage du projet en Agile Scrum",
+      "Pilotage de l’intégration du programme fidélité",
+      "Coordination des équipes métier, développement, intégration et QA",
+      "Formalisation des spécifications fonctionnelles",
+      "Analyse des impacts entre systèmes et services connectés",
+      "Pilotage des recettes SIT et UAT",
+      "Formation du client au back office Drupal",
+    ],
+
+    stack: ["Drupal", "Hybris", "Jira", "Confluence"],
+
+    methodology: ["Agile Scrum"],
+
+    keyMetrics: [
+      { value: "Hybris → Drupal", label: "migration technique" },
+      { value: "0 rupture", label: "de service pendant la transition" },
+      { value: "100%", label: "des contenus migrés en sécurité" },
+    ],
+
+    deliverables: [
+      "Refonte site vitrine",
+      "Intégration programme fidélité",
+      "Spécifications fonctionnelles",
+      "Recettes SIT & UAT",
+      "Formation back office Drupal",
+    ],
+
+    skillsUsed: [
+      "Product Ownership",
+      "Intégration de systèmes",
+      "Flux de données",
+      "QA Management",
+      "Gestion du changement",
+    ],
+
+    achievements: [
+      {
+        title: "Refonte réussie",
+        text:
+          "Refonte complète du site vitrine réalisée avec succès, dans le respect des exigences métier.",
+      },
+      {
+        title: "Migration sécurisée",
+        text:
+          "Migration de contenus d’Hybris vers Drupal sans perte de données ni rupture de service.",
+      },
+      {
+        title: "Intégration fidélité",
+        text:
+          "Intégration réussie du programme fidélité dans le nouvel écosystème digital.",
+      },
+    ],
+
+    results: [
+      "Refonte complète du site réalisée avec succès",
+      "Migration de contenus sécurisée",
+      "Intégration du programme fidélité dans le nouvel écosystème digital",
+    ],
+
+    whatItSays:
+      "Ce projet illustre ma capacité à piloter une migration technique complexe tout en sécurisant l’intégration de fonctionnalités métier sensibles comme un programme fidélité.",
+  },
+
+  {
+    slug: "parrot",
+    title: "Parrot",
+    logos: null,
+    category: "Pilotage E-commerce B2B & B2C",
+    sector: "Tech / Électronique grand public",
+    duration: "4 ans",
+    roleLabel: "Chef de Projet E-Commerce",
+
+    shortDescription:
+      "Pilotage des sites E-Commerce B2C et B2B de Parrot (Prestashop), stratégie commerciale et coordination internationale.",
+
+    heroDescription:
+      "Chef de Projet E-Commerce responsable du site B2C store.parrot.com puis parrot.com, puis du site E-Commerce B2B sur l’Europe, l’Asie et les États-Unis.",
+
+    challenge:
+      "Piloter et développer deux plateformes e-commerce (B2C et B2B) à l’international, en garantissant la performance commerciale, le merchandising et la coordination avec les équipes terrain et filiales locales.",
+
+    context:
+      "Responsable du back office des sites B2C et B2B de Parrot (Prestashop), en charge du merchandising, des campagnes promotionnelles et de la coordination avec les équipes commerciales, logistiques et SAV, ainsi qu’avec les filiales locales à l’international.",
+
+    objectives: [
+      "Développer le site E-Commerce B2B sur l’Europe, l’Asie et les États-Unis",
+      "Piloter le merchandising des sites B2C, B2B et marketplaces",
+      "Augmenter le chiffre d’affaires et le portefeuille clients",
+      "Coordonner les filiales locales et les équipes commerciales terrain",
+    ],
+
+    role: [
+      "Élaboration de la stratégie de développement du site E-Commerce B2B",
+      "Organisation des calendriers promotionnels et de communication",
+      "Gestion du merchandising des plateformes B2C, B2B et marketplaces (Ebay, Priceminister)",
+      "Mise en place des campagnes promotionnelles et suivi statistique des résultats",
+      "Gestion de la relation client et coordination avec logistique et SAV",
+      "Coordination avec les équipes commerciales terrain et les filiales locales",
+    ],
+
+    stack: ["Prestashop", "Drupal Commerce", "Ebay", "Priceminister"],
+
+    methodology: ["Gestion de projet e-commerce"],
+
+    keyMetrics: [
+      { value: "x3", label: "chiffre d’affaires européen en 2016" },
+      { value: "+50%", label: "portefeuille clients en 2016" },
+      { value: "4 ans", label: "pilotage e-commerce B2C & B2B" },
+    ],
+
+    deliverables: [
+      "Stratégie E-Commerce B2B",
+      "Calendrier promotionnel",
+      "Merchandising multi-plateformes",
+      "Campagnes promotionnelles",
+      "Coordination filiales locales",
+    ],
+
+    skillsUsed: [
+      "E-commerce B2B & B2C",
+      "Gestion de portefeuille clients",
+      "Merchandising",
+      "Coordination internationale",
+      "Pilotage commercial",
+    ],
+
+    achievements: [
+      {
+        title: "Croissance du CA",
+        text: "Multiplication par 3 du chiffre d’affaires européen sur l’année 2016.",
+      },
+      {
+        title: "Croissance du portefeuille",
+        text: "Augmentation de 50% du portefeuille client sur l’année 2016.",
+      },
+      {
+        title: "Coordination internationale",
+        text: "Déploiement et animation du site B2B sur l’Europe, l’Asie et les États-Unis.",
+      },
+    ],
+
+    results: [
+      "Multiplication par 3 du CA européen en 2016",
+      "Augmentation de 50% du portefeuille client en 2016",
+      "Déploiement réussi du site E-Commerce B2B à l’international",
+    ],
+
+    whatItSays:
+      "Ce projet illustre ma capacité à piloter des plateformes e-commerce à l’international, avec une forte orientation résultats commerciaux et coordination multi-marchés.",
+  },
 ];
 
 export function getProjectBySlug(slug) {

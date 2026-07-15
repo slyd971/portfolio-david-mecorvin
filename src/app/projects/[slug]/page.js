@@ -33,12 +33,19 @@ export default async function ProjectPage({ params }) {
   }
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#050816] text-white">
-      <div className="fixed inset-0 -z-30 bg-[#050816]" />
-      <div className="fixed inset-0 -z-20 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.20),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(37,99,235,0.16),transparent_20%)]" />
+    <main className="min-h-screen overflow-x-hidden text-white">
+      <div className="fixed inset-0 -z-30 bg-[#16110C]" />
+      <div className="fixed inset-0 -z-20 bg-[radial-gradient(circle_at_top_left,rgba(224,146,44,0.20),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(194,112,58,0.16),transparent_20%)]" />
       <div className="fixed inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.04),transparent_18%,transparent_82%,rgba(255,255,255,0.04))]" />
+      <svg className="pointer-events-none fixed inset-0 -z-10 h-full w-full opacity-[0.09]">
+        <filter id="grain">
+          <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch" />
+          <feColorMatrix type="saturate" values="0" />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#grain)" />
+      </svg>
 
-      <header className="border-b border-white/10 bg-[#050816]/80 backdrop-blur-2xl">
+      <header className="border-b border-white/10 bg-[#16110C]/80 backdrop-blur-2xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-10">
           <Link
             href="/"
@@ -52,7 +59,7 @@ export default async function ProjectPage({ params }) {
             href="https://www.linkedin.com/in/david-mecorvin-chef-de-projet-digital/"
             target="_blank"
             rel="noreferrer"
-            className="hidden items-center gap-2 rounded-full border border-[#60A5FA]/30 bg-[#2563EB]/20 px-4 py-2 text-sm font-semibold text-white transition hover:border-[#60A5FA] hover:bg-[#2563EB]/35 sm:inline-flex"
+            className="hidden items-center gap-2 rounded-full border border-[#F5A94E]/30 bg-[#C2703A]/20 px-4 py-2 text-sm font-semibold text-white transition hover:border-[#F5A94E] hover:bg-[#C2703A]/35 sm:inline-flex"
           >
             <Linkedin size={16} />
             LinkedIn
@@ -62,28 +69,34 @@ export default async function ProjectPage({ params }) {
 
       <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-10 lg:py-16">
         <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="rounded-[1.8rem] border border-white/10 bg-white/5 p-6 shadow-[0_0_40px_rgba(37,99,235,0.06)] sm:rounded-[2rem] sm:p-8">
-            <p className="text-xs uppercase tracking-[0.24em] text-[#60A5FA] sm:text-sm">
+          <div className="rounded-[1.8rem] border border-white/10 bg-white/5 p-6 shadow-[0_0_40px_rgba(194,112,58,0.06)] sm:rounded-[2rem] sm:p-8">
+            <p className="text-xs uppercase tracking-[0.24em] text-[#F5A94E] sm:text-sm">
               Projet
             </p>
 
             <div className="mt-4 flex items-center gap-4">
 
-  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white p-2 shadow-sm">
-    <img
-      src={project.logo}
-      alt={project.title}
-      className="h-10 w-10 object-contain"
-    />
+  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white p-2 shadow-sm">
+    {project.logos ? (
+      <img
+        src={project.logos}
+        alt={project.title}
+        className="h-10 w-10 object-contain"
+      />
+    ) : (
+      <span className="text-lg font-semibold text-black/70">
+        {project.title.slice(0, 2).toUpperCase()}
+      </span>
+    )}
   </div>
 
-  <h1 className="text-3xl font-semibold sm:text-4xl md:text-5xl">
+  <h1 className="font-serif text-3xl font-semibold sm:text-4xl md:text-5xl">
     {project.title}
   </h1>
 
 </div>
 
-            <p className="mt-3 text-sm font-medium text-[#93C5FD] sm:text-base">
+            <p className="mt-3 text-sm font-medium text-[#FBD9A8] sm:text-base">
               {project.category}
             </p>
 
@@ -94,34 +107,34 @@ export default async function ProjectPage({ params }) {
             <div className="mt-6 flex flex-wrap gap-2">
               {project.sector && (
                 <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-4 py-2 text-sm text-white/75">
-                  <Building2 size={15} className="text-[#60A5FA]" />
+                  <Building2 size={15} className="text-[#F5A94E]" />
                   {project.sector}
                 </span>
               )}
 
               {project.duration && (
                 <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-4 py-2 text-sm text-white/75">
-                  <Clock3 size={15} className="text-[#60A5FA]" />
+                  <Clock3 size={15} className="text-[#F5A94E]" />
                   {project.duration}
                 </span>
               )}
 
               {project.roleLabel && (
                 <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-4 py-2 text-sm text-white/75">
-                  <Layers3 size={15} className="text-[#60A5FA]" />
+                  <Layers3 size={15} className="text-[#F5A94E]" />
                   {project.roleLabel}
                 </span>
               )}
             </div>
           </div>
 
-          <div className="rounded-[1.8rem] border border-white/10 bg-gradient-to-br from-[#0B1738] via-[#0E1D49] to-[#12275F] p-6 shadow-[0_0_60px_rgba(37,99,235,0.10)] sm:rounded-[2rem] sm:p-8">
+          <div className="rounded-[1.8rem] border border-white/10 bg-gradient-to-br from-[#2E1B0C] via-[#3A230F] to-[#472B13] p-6 shadow-[0_0_60px_rgba(194,112,58,0.10)] sm:rounded-[2rem] sm:p-8">
             <div className="flex h-full flex-col justify-between">
               <div>
-                <p className="text-xs uppercase tracking-[0.24em] text-[#93C5FD] sm:text-sm">
+                <p className="text-xs uppercase tracking-[0.24em] text-[#FBD9A8] sm:text-sm">
                   Snapshot
                 </p>
-                <h2 className="mt-4 text-2xl font-semibold">Vue d’ensemble</h2>
+                <h2 className="font-serif mt-4 text-2xl font-semibold">Vue d’ensemble</h2>
                 <p className="mt-4 text-sm leading-7 text-white/72">
                   Une lecture rapide du projet, de son périmètre et de son impact.
                 </p>
@@ -134,7 +147,7 @@ export default async function ProjectPage({ params }) {
                       key={item.label}
                       className="rounded-[1.4rem] border border-white/10 bg-white/5 p-5"
                     >
-                      <div className="text-2xl font-semibold text-[#BFDBFE]">
+                      <div className="text-2xl font-semibold text-[#F6D9A8]">
                         {item.value}
                       </div>
                       <div className="mt-2 text-sm leading-6 text-white/65">
@@ -151,10 +164,10 @@ export default async function ProjectPage({ params }) {
 
       {project.results && (
         <section className="mx-auto max-w-7xl px-4 pb-6 sm:px-6 sm:pb-8 lg:px-10 lg:pb-10">
-          <div className="rounded-[1.8rem] border border-[#60A5FA]/20 bg-gradient-to-br from-[#DBEAFE] via-[#93C5FD] to-[#3B82F6] p-6 text-black sm:rounded-[2rem] sm:p-8">
+          <div className="rounded-[1.8rem] border border-[#F5A94E]/20 bg-gradient-to-br from-[#FDECC8] via-[#FBD9A8] to-[#E0922C] p-6 text-black sm:rounded-[2rem] sm:p-8">
             <div className="flex items-center gap-3">
               <TrendingUp size={22} />
-              <h2 className="text-2xl font-semibold">Résultats / impact</h2>
+              <h2 className="font-serif text-2xl font-semibold">Résultats / impact</h2>
             </div>
 
             <div className="mt-6 grid gap-4 md:grid-cols-3">
@@ -175,8 +188,8 @@ export default async function ProjectPage({ params }) {
         <section className="mx-auto max-w-7xl px-4 pb-6 sm:px-6 sm:pb-8 lg:px-10 lg:pb-10">
           <div className="rounded-[1.8rem] border border-white/10 bg-white/5 p-6 sm:rounded-[2rem] sm:p-8">
             <div className="flex items-center gap-3">
-              <BarChart3 size={20} className="text-[#60A5FA]" />
-              <h2 className="text-2xl font-semibold">Challenge</h2>
+              <BarChart3 size={20} className="text-[#F5A94E]" />
+              <h2 className="font-serif text-2xl font-semibold">Challenge</h2>
             </div>
             <p className="mt-4 max-w-4xl text-sm leading-7 text-white/72 sm:text-base sm:leading-8">
               {project.challenge}
@@ -189,8 +202,8 @@ export default async function ProjectPage({ params }) {
         <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr] lg:gap-5">
           <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-6 sm:rounded-[2rem]">
             <div className="flex items-center gap-3">
-              <Target size={20} className="text-[#60A5FA]" />
-              <h2 className="text-xl font-semibold">Contexte</h2>
+              <Target size={20} className="text-[#F5A94E]" />
+              <h2 className="font-serif text-xl font-semibold">Contexte</h2>
             </div>
             <p className="mt-4 text-sm leading-7 text-white/72">
               {project.context}
@@ -199,8 +212,8 @@ export default async function ProjectPage({ params }) {
 
           <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-6 sm:rounded-[2rem]">
             <div className="flex items-center gap-3">
-              <Target size={20} className="text-[#60A5FA]" />
-              <h2 className="text-xl font-semibold">Objectifs</h2>
+              <Target size={20} className="text-[#F5A94E]" />
+              <h2 className="font-serif text-xl font-semibold">Objectifs</h2>
             </div>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-white/72">
               {project.objectives.map((item) => (
@@ -215,8 +228,8 @@ export default async function ProjectPage({ params }) {
         <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr] lg:gap-5">
           <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-6 sm:rounded-[2rem]">
             <div className="flex items-center gap-3">
-              <Briefcase size={20} className="text-[#60A5FA]" />
-              <h2 className="text-xl font-semibold">Mon rôle</h2>
+              <Briefcase size={20} className="text-[#F5A94E]" />
+              <h2 className="font-serif text-xl font-semibold">Mon rôle</h2>
             </div>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-white/72">
               {project.role.map((item) => (
@@ -227,8 +240,8 @@ export default async function ProjectPage({ params }) {
 
           <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-6 sm:rounded-[2rem]">
             <div className="flex items-center gap-3">
-              <Wrench size={20} className="text-[#60A5FA]" />
-              <h2 className="text-xl font-semibold">Stack / outils</h2>
+              <Wrench size={20} className="text-[#F5A94E]" />
+              <h2 className="font-serif text-xl font-semibold">Stack / outils</h2>
             </div>
 
             <div className="mt-4 flex flex-wrap gap-2">
@@ -262,8 +275,8 @@ export default async function ProjectPage({ params }) {
             {project.deliverables && (
               <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-6 sm:rounded-[2rem]">
                 <div className="flex items-center gap-3">
-                  <CheckCircle2 size={20} className="text-[#60A5FA]" />
-                  <h2 className="text-xl font-semibold">Livrables</h2>
+                  <CheckCircle2 size={20} className="text-[#F5A94E]" />
+                  <h2 className="font-serif text-xl font-semibold">Livrables</h2>
                 </div>
                 <ul className="mt-4 space-y-3 text-sm leading-7 text-white/72">
                   {project.deliverables.map((item) => (
@@ -276,8 +289,8 @@ export default async function ProjectPage({ params }) {
             {project.skillsUsed && (
               <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-6 sm:rounded-[2rem]">
                 <div className="flex items-center gap-3">
-                  <CheckCircle2 size={20} className="text-[#60A5FA]" />
-                  <h2 className="text-xl font-semibold">Compétences mobilisées</h2>
+                  <CheckCircle2 size={20} className="text-[#F5A94E]" />
+                  <h2 className="font-serif text-xl font-semibold">Compétences mobilisées</h2>
                 </div>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {project.skillsUsed.map((item) => (
@@ -297,7 +310,7 @@ export default async function ProjectPage({ params }) {
 
       <section className="mx-auto max-w-7xl px-4 pb-6 sm:px-6 sm:pb-8 lg:px-10 lg:pb-10">
         <div className="rounded-[1.8rem] border border-white/10 bg-white/5 p-6 sm:rounded-[2rem] sm:p-8">
-          <h2 className="text-2xl font-semibold">Réalisations clés</h2>
+          <h2 className="font-serif text-2xl font-semibold">Réalisations clés</h2>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {project.achievements.map((item) => (
@@ -318,7 +331,7 @@ export default async function ProjectPage({ params }) {
       {project.whatItSays && (
         <section className="mx-auto max-w-7xl px-4 pb-14 sm:px-6 sm:pb-16 lg:px-10 lg:pb-20">
           <div className="rounded-[1.8rem] border border-white/10 bg-white/5 p-6 sm:rounded-[2rem] sm:p-8">
-            <h2 className="text-2xl font-semibold">Ce que ce projet dit de moi</h2>
+            <h2 className="font-serif text-2xl font-semibold">Ce que ce projet dit de moi</h2>
             <p className="mt-4 max-w-4xl text-sm leading-7 text-white/72 sm:text-base sm:leading-8">
               {project.whatItSays}
             </p>
@@ -336,7 +349,7 @@ export default async function ProjectPage({ params }) {
                 href="https://www.linkedin.com/in/david-mecorvin-chef-de-projet-digital/"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:border-[#60A5FA] hover:bg-[#2563EB]/20"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:border-[#F5A94E] hover:bg-[#C2703A]/20"
               >
                 <Linkedin size={18} />
                 Voir LinkedIn
