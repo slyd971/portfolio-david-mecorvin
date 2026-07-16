@@ -126,9 +126,11 @@ export default async function ProjectPage({ params }) {
 
   <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white p-2 shadow-sm">
     {project.logos ? (
-      <img
+      <Image
         src={project.logos}
         alt={`Logo ${project.title}`}
+        width={40}
+        height={40}
         className="h-10 w-10 object-contain"
       />
     ) : (

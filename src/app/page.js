@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   Mail,
   Linkedin,
@@ -300,11 +301,16 @@ export default function Page() {
             <div className="absolute -inset-3 rounded-[2.2rem] bg-gradient-to-br from-[#C2703A]/20 via-transparent to-[#F5A94E]/10 blur-2xl" />
 
             <div className="relative overflow-hidden rounded-[1.8rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/40 backdrop-blur-2xl sm:rounded-[2.2rem]">
-              <img
-                src="/photo/profil-cv.png"
-                alt="Portrait de David Mecorvin, Chef de Projet Digital / Product Owner"
-                className="aspect-[4/5] w-full object-cover object-top"
-              />
+              <div className="relative aspect-[4/5] w-full">
+                <Image
+                  src="/photo/profil-cv.png"
+                  alt="Portrait de David Mecorvin, Chef de Projet Digital / Product Owner"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 40vw, 90vw"
+                  className="object-cover object-top"
+                />
+              </div>
               <div className="p-5 sm:p-6">
                 <p className="text-base font-semibold text-white sm:text-lg">David Mecorvin</p>
                 <p className="mt-1 text-sm text-white/60">Chef de Projet Digital / Product Owner</p>
@@ -401,9 +407,11 @@ export default function Page() {
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white p-2 shadow-sm">
                 {project.logos ? (
-                  <img
+                  <Image
                     src={project.logos}
                     alt={`Logo ${project.title}`}
+                    width={32}
+                    height={32}
                     className="h-8 w-8 object-contain"
                   />
                 ) : (
