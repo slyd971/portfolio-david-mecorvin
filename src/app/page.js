@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import {
   Mail,
@@ -10,6 +9,7 @@ import { projects } from "@/data/projects";
 import MobileNav from "@/components/MobileNav";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 import ExpertiseList from "@/components/ExpertiseList";
+import ProjectsCarousel from "@/components/ProjectsCarousel";
 import Reveal from "@/components/Reveal";
 import { siteUrl, linkedinUrl } from "@/lib/site";
 
@@ -448,7 +448,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="method" className="scroll-mt-24 bg-surface py-14 text-midnight sm:py-20 lg:py-28">
+      <section id="method" className="scroll-mt-24 bg-surface py-12 text-midnight sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <Reveal as="div" className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr]">
             <div>
@@ -493,42 +493,15 @@ export default function Page() {
             </h2>
           </Reveal>
 
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {projects.map((project, i) => (
-              <Link
-                key={project.slug}
-                href={`/projects/${project.slug}`}
-                className={`group relative overflow-hidden rounded-[1.6rem] p-6 transition hover:-translate-y-1 ${cardTreatments[i % cardTreatments.length]}`}
-              >
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] opacity-70">
-                  {project.title} • {project.sector}
-                </p>
-                <h3 className="font-display mt-3 text-2xl font-semibold leading-tight">
-                  {projectTitles[project.slug] ?? project.title}
-                </h3>
-                <div className="mt-5 space-y-3 text-sm leading-6 opacity-80">
-                  <p><span className="font-semibold">Challenge.</span> {project.challenge}</p>
-                  <p><span className="font-semibold">Rôle.</span> {project.roleLabel}</p>
-                  <p><span className="font-semibold">Impact.</span> {project.results?.[0]}</p>
-                </div>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {[project.category, project.duration, ...(project.stack ?? []).slice(0, 2)].filter(Boolean).map((tag) => (
-                    <span key={tag} className="rounded-full border border-current/15 px-3 py-1 text-xs opacity-80">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <p className="mt-5 inline-flex items-center gap-1 text-sm font-semibold">
-                  Voir le projet
-                  <ArrowUpRight size={14} className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </p>
-              </Link>
-            ))}
-          </div>
+          <ProjectsCarousel
+            projects={projects}
+            projectTitles={projectTitles}
+            cardTreatments={cardTreatments}
+          />
         </div>
       </section>
 
-      <section id="stack" className="scroll-mt-24 bg-midnight py-14 text-white sm:py-20 lg:py-28">
+      <section id="stack" className="scroll-mt-24 bg-midnight py-12 text-white sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <Reveal as="div" className="mb-8 flex flex-col gap-3 sm:mb-10 sm:gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
