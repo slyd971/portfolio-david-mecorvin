@@ -52,7 +52,7 @@ export default function Page() {
       company: "SQLI",
       badge: "Groupe Rocher • Design System",
       points: [
-        "Pilotage d’un Design System Front mutualisé pour le programme stratégique Dermo Botanical Beauty (DBB).",
+        "Refonte du Design System Front mutualisé pour le programme stratégique Dermo Botanical Beauty (DBB).",
         "Coordination des équipes UX, Design, Architecture et Développement Front dans un contexte de planning contraint.",
         "Rédaction des User Stories, spécifications techniques et contrats de services entre composants mutualisés.",
       ],
@@ -522,20 +522,23 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="contact" className="scroll-mt-24 bg-midnight py-16 text-white sm:py-24 lg:py-28">
+      <section
+        id="contact"
+        className="scroll-mt-24 border-t-4 border-accent bg-surface py-16 text-midnight sm:py-24 lg:py-28"
+      >
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-10">
-          <p className="text-xs uppercase tracking-[0.24em] text-accent-light sm:text-sm">Contact</p>
+          <p className="text-xs uppercase tracking-[0.24em] text-accent sm:text-sm">Contact</p>
           <h2 className="font-display mt-4 text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
             Vous cherchez un CP / PO capable de cadrer, structurer et faire avancer les sujets ?
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-midnight/70 sm:text-base sm:leading-8">
             Je peux intervenir sur des contextes de refonte, optimisation de parcours, backlog produit, pilotage de delivery, coordination multi-interlocuteurs et projets web à fort enjeu métier.
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <a
               href="mailto:david.mecorvin@hotmail.fr"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-accent-light px-6 py-3 text-sm font-semibold text-midnight transition hover:scale-[1.02]"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:scale-[1.02] hover:bg-midnight"
             >
               <Mail size={18} />
               david.mecorvin@hotmail.fr
@@ -544,7 +547,7 @@ export default function Page() {
               href="https://www.linkedin.com/in/david-mecorvin-chef-de-projet-digital/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-accent-light hover:bg-white/5"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-midnight/15 px-6 py-3 text-sm font-semibold text-midnight transition hover:border-accent hover:bg-accent/5"
             >
               <Linkedin size={18} />
               Voir le profil LinkedIn
