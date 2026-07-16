@@ -6,9 +6,9 @@ import { Menu, X, Linkedin } from "lucide-react";
 const LINKS = [
   ["Déblocages", "#profil"],
   ["Expertise", "#expertise"],
+  ["Méthode", "#method"],
   ["Expériences", "#experiences"],
   ["Projets", "#projects"],
-  ["Méthode", "#method"],
   ["Stack", "#stack"],
   ["Contact", "#contact"],
 ];

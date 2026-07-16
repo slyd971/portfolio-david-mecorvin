@@ -206,9 +206,9 @@ export default function Page() {
   const navLinks = [
     ["Déblocages", "#profil"],
     ["Expertise", "#expertise"],
+    ["Méthode", "#method"],
     ["Expériences", "#experiences"],
     ["Projets", "#projects"],
-    ["Méthode", "#method"],
     ["Stack", "#stack"],
     ["Contact", "#contact"],
   ];
@@ -447,7 +447,30 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="experiences" className="scroll-mt-24 bg-surface py-14 text-midnight sm:py-20 lg:py-28">
+      <section id="method" className="scroll-mt-24 bg-surface py-14 text-midnight sm:py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+          <Reveal as="div" className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr]">
+            <div>
+              <p className="text-xs uppercase tracking-[0.24em] text-accent sm:text-sm">Méthode</p>
+              <h2 className="font-display mt-3 max-w-lg text-2xl font-semibold leading-[1.05] sm:text-3xl md:text-4xl">
+                Ma manière de faire avancer les projets
+              </h2>
+            </div>
+            <div className="border-t border-midnight/10">
+              {workingPrinciples.map((item) => (
+                <p
+                  key={item}
+                  className="border-b border-midnight/10 py-5 font-display text-xl font-semibold leading-snug text-midnight/86 sm:text-2xl"
+                >
+                  {item}
+                </p>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section id="experiences" className="scroll-mt-24 border-t border-midnight/10 bg-surface py-14 text-midnight sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <Reveal as="div" className="mb-8 sm:mb-10">
             <p className="text-xs uppercase tracking-[0.24em] text-accent sm:text-sm">Expériences</p>
@@ -501,29 +524,6 @@ export default function Page() {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section id="method" className="scroll-mt-24 bg-surface py-14 text-midnight sm:py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <Reveal as="div" className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr]">
-            <div>
-              <p className="text-xs uppercase tracking-[0.24em] text-accent sm:text-sm">Méthode</p>
-              <h2 className="font-display mt-3 max-w-lg text-2xl font-semibold leading-[1.05] sm:text-3xl md:text-4xl">
-                Ma manière de faire avancer les projets
-              </h2>
-            </div>
-            <div className="border-t border-midnight/10">
-              {workingPrinciples.map((item) => (
-                <p
-                  key={item}
-                  className="border-b border-midnight/10 py-5 font-display text-xl font-semibold leading-snug text-midnight/86 sm:text-2xl"
-                >
-                  {item}
-                </p>
-              ))}
-            </div>
-          </Reveal>
         </div>
       </section>
 
