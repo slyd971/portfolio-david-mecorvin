@@ -334,7 +334,7 @@ export default function Page() {
                   />
                 </div>
                 <div className="p-5 sm:p-6">
-                  <p className="text-base font-semibold text-white sm:text-lg">David Mecorvin</p>
+                  <p className="text-xl font-semibold leading-tight text-white sm:text-2xl">David Mecorvin</p>
                   <p className="mt-1 text-sm text-white/60">Chef de Projet Digital / Product Owner</p>
                 </div>
               </div>
