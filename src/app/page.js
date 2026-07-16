@@ -260,7 +260,7 @@ export default function Page() {
 
         <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="grid items-start gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-8">
-            <div>
+            <div className="order-2 lg:order-1">
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[10px] uppercase tracking-[0.22em] text-white/70 sm:px-4 sm:text-xs">
                 <BadgeCheck size={14} className="text-accent-light" />
                 Disponible pour mission / CDI
@@ -319,7 +319,7 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative order-1 lg:order-2">
               <div className="absolute -inset-3 rounded-[2.2rem] bg-gradient-to-br from-accent-light/20 via-transparent to-accent/10 blur-2xl" />
 
               <div className="relative overflow-hidden rounded-[1.8rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/40 backdrop-blur-2xl sm:rounded-[2.2rem]">
