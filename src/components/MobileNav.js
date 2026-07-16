@@ -34,7 +34,7 @@ export default function MobileNav() {
             className="absolute inset-0 bg-black/70 backdrop-blur-sm"
             onClick={() => setOpen(false)}
           />
-          <div className="absolute inset-x-4 top-4 rounded-3xl border border-white/10 bg-[#14100A] p-5 shadow-[0_0_60px_rgba(0,0,0,0.5)]">
+          <div className="absolute inset-x-4 top-4 rounded-3xl border border-white/10 bg-midnight p-5 shadow-[0_0_60px_rgba(0,0,0,0.5)]">
             <div className="flex items-center justify-between">
               <p className="text-sm font-semibold tracking-wide text-white">Menu</p>
               <button
@@ -65,7 +65,7 @@ export default function MobileNav() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#F5A94E]/30 bg-[#C2703A]/20 px-4 py-3 text-sm font-semibold text-white transition hover:border-[#F5A94E] hover:bg-[#C2703A]/35"
+              className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full border border-accent-light/30 bg-accent-light/15 px-4 py-3 text-sm font-semibold text-white transition hover:border-accent-light hover:bg-accent-light/25"
             >
               <Linkedin size={16} />
               LinkedIn

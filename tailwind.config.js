@@ -5,13 +5,7 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ["var(--font-plex)", "ui-sans-serif", "system-ui", "sans-serif"],
-        serif: ["var(--font-fraunces)", "ui-serif", "Georgia", "serif"],
-      },
-    },
-  },
-  plugins: [],
+  // Design tokens (colors, fonts) are defined via the `@theme` block in
+  // src/styles/globals.css — Tailwind v4's CSS-first mechanism. This file
+  // only needs to declare content globs.
 };

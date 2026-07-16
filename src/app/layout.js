@@ -1,11 +1,10 @@
-import { Fraunces, IBM_Plex_Sans } from "next/font/google";
+import { Space_Grotesk, IBM_Plex_Sans } from "next/font/google";
 import "../styles/globals.css";
 
-const fraunces = Fraunces({
+const grotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-grotesk",
   weight: ["500", "600", "700"],
-  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -45,7 +44,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr" className={`${fraunces.variable} ${plexSans.variable}`}>
+    <html lang="fr" className={`${grotesk.variable} ${plexSans.variable}`}>
       <body>{children}</body>
     </html>
   );
