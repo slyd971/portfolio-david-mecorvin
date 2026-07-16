@@ -369,9 +369,9 @@ export default function Page() {
         </div>
       </section>
 
-      <section aria-label="Clients avec lesquels j’ai travaillé" className="border-y border-midnight/10 bg-surface py-5 text-midnight">
+      <section aria-label="Clients avec lesquels j’ai travaillé" className="border-y border-white/10 bg-midnight py-5 text-white">
         <div className="mx-auto grid max-w-7xl gap-4 px-4 sm:px-6 lg:grid-cols-[0.28fr_0.72fr] lg:px-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent-light">
             Clients avec lesquels j’ai travaillé
           </p>
           <div className="overflow-hidden">
@@ -379,7 +379,7 @@ export default function Page() {
               {[...clients, ...clients].map((client, index) => (
                 <span
                   key={`${client}-${index}`}
-                  className="font-display whitespace-nowrap text-lg font-semibold text-midnight/78 sm:text-xl"
+                  className="font-display whitespace-nowrap text-lg font-semibold text-white/78 sm:text-xl"
                 >
                   {client}
                 </span>
