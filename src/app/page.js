@@ -57,7 +57,7 @@ export default function Page() {
   const experiences = [
     {
       period: "2026",
-      role: "Product Owner Sénior",
+      role: "Product Owner Senior",
       company: "SQLI",
       badge: "Groupe Rocher • Design System",
       points: [
@@ -68,7 +68,7 @@ export default function Page() {
     },
     {
       period: "2023 — 2026",
-      role: "Product Owner / Chef de projet Web Sénior",
+      role: "Product Owner / Chef de projet Web Senior",
       company: "Listen too",
       badge: "ALDI • BNP Paribas • BforBank",
       points: [
@@ -374,7 +374,7 @@ export default function Page() {
           <div className="mb-6 sm:mb-8">
             <p className="text-xs uppercase tracking-[0.24em] text-[#F5A94E] sm:text-sm">Expériences</p>
             <h2 className="font-serif mt-3 text-2xl font-semibold sm:text-3xl md:text-4xl">
-              Une trajectoire pensée pour rassurer, structurer et livrer
+              Une trajectoire pensée pour cadrer, structurer et livrer
             </h2>
           </div>
 

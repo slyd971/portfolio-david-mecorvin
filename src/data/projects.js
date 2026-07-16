@@ -48,7 +48,9 @@ export const projects = [
       "Looker Studio",
     ],
 
-    methodology: ["Cycle en V adapté avec pratiques Agile"],
+    methodology: [
+      "Méthodologie hybride adaptée au contexte : cadrage structuré (cycle en V) et pratiques Agile pour les évolutions",
+    ],
 
     keyMetrics: [
       { value: "+30%", label: "opt-in recrutés en 2025" },
