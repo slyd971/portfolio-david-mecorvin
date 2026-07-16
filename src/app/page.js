@@ -4,11 +4,7 @@ import {
   Mail,
   Linkedin,
   Briefcase,
-  BadgeCheck,
   ArrowUpRight,
-  Building2,
-  Trophy,
-  Sparkles,
 } from "lucide-react";
 import { projects } from "@/data/projects";
 import MobileNav from "@/components/MobileNav";
@@ -22,26 +18,29 @@ export default function Page() {
     { value: "30+", label: "projets web / mobile / refonte" },
   ];
   const heroLabels = [
-    { value: "Agile", label: "Scrum, Kanban, gouvernance produit" },
-    { value: "360°", label: "vision projet, produit et delivery" },
-    { value: "Multi", label: "banque, retail, data, e-commerce" },
+    { value: "Banque", label: "parcours web et mobile sensibles" },
+    { value: "Retail", label: "activations digitales et e-commerce" },
+    { value: "International", label: "équipes, marchés et partenaires" },
   ];
 
-  const highlights = [
+  const blockers = [
     {
-      icon: <Building2 size={18} />,
-      title: "Annonceur + agence",
-      text: "Une vraie lecture business + delivery, nourrie par des expériences côté annonceur et en pilotage agence. Je sais traduire un enjeu métier en cadrage concret, priorités actionnables et arbitrages utiles.",
+      number: "01",
+      title: "Cadrage flou",
+      text:
+        "Je transforme une expression de besoin dispersée en périmètre clair, priorisé et exploitable par les équipes.",
     },
     {
-      icon: <Briefcase size={18} />,
-      title: "Pilotage transverse",
-      text: "Capacité à aligner métiers, UX, tech et direction autour d’un même cap. J’anime les rituels, clarifie les dépendances et garde la trajectoire lisible jusqu’à la mise en production.",
+      number: "02",
+      title: "Delivery sous tension",
+      text:
+        "Je rends visibles les dépendances, les arbitrages et les risques pour sécuriser les décisions et les mises en production.",
     },
     {
-      icon: <Trophy size={18} />,
-      title: "Positionnement senior",
-      text: "Une approche structurée, rassurante et orientée impact, avec une attention forte portée à la qualité du delivery, aux KPI et à la prise de décision dans des contextes exigeants.",
+      number: "03",
+      title: "Équipes désalignées",
+      text:
+        "Je crée un langage commun entre métier, produit, UX, tech, partenaires et direction.",
     },
   ];
 
@@ -51,6 +50,11 @@ export default function Page() {
       role: "Product Owner Senior",
       company: "SQLI",
       badge: "Groupe Rocher • Design System",
+      challenge:
+        "Refondre un Design System Front mutualisé dans un programme stratégique, avec des équipes nombreuses et un planning contraint.",
+      impact:
+        "Clarification du périmètre, sécurisation des échanges entre design, architecture et front, et préparation d’un socle mutualisé plus lisible.",
+      tags: ["Design System", "DBB", "UX", "Architecture", "Front"],
       points: [
         "Refonte du Design System Front mutualisé pour le programme stratégique Dermo Botanical Beauty (DBB).",
         "Coordination des équipes UX, Design, Architecture et Développement Front dans un contexte de planning contraint.",
@@ -62,6 +66,11 @@ export default function Page() {
       role: "Product Owner / Chef de projet Web Senior",
       company: "Listen too",
       badge: "ALDI • BNP Paribas • BforBank",
+      challenge:
+        "Faire avancer plusieurs produits et parcours digitaux dans des environnements grands comptes aux contraintes métier, UX et delivery fortes.",
+      impact:
+        "Meilleure visibilité sur les priorités, gouvernance projet plus structurée et alignement renforcé entre équipes internes, agences et squads IT.",
+      tags: ["Banque", "Retail", "Backlog", "Delivery", "Agile"],
       points: [
         "Pilotage de produits et projets digitaux stratégiques pour des grands comptes, en coordination avec agences et équipes internes.",
         "Responsable du delivery et du run applicatif, garant de la gouvernance Agile et de l’alignement métier.",
@@ -73,6 +82,11 @@ export default function Page() {
       role: "Product Owner international & Web Marketing Manager",
       company: "Dataiku",
       badge: "Web • SEO • Analytics",
+      challenge:
+        "Structurer les demandes web internationales tout en gardant une trajectoire claire sur la performance, le SEO et les mises en production.",
+      impact:
+        "Suivi des KPI plus lisible, meilleure coordination des besoins pays et visibilité accrue sur l’avancement des projets web.",
+      tags: ["International", "SEO", "Analytics", "KPI", "Web"],
       points: [
         "Pilotage des plateformes web corporate dans un environnement international, en semi-agile.",
         "Centralisation et priorisation des besoins des équipes internationales, suivi des KPI et stratégie SEO.",
@@ -84,6 +98,11 @@ export default function Page() {
       role: "Product Owner Senior Bilingue Multi-Projets",
       company: "Smile Open Source Solutions",
       badge: "Drupal • Grands comptes",
+      challenge:
+        "Piloter plusieurs projets Drupal grands comptes avec des enjeux de refonte, d’intégration, de recette et de transfert support.",
+      impact:
+        "Sécurisation des jalons de livraison, meilleure coordination des équipes projet et réduction des zones de blocage avant mise en production.",
+      tags: ["Drupal", "Grands comptes", "QA", "UAT", "Support"],
       points: [
         "Pilotage de projets digitaux stratégiques pour des grands comptes (Printemps, Crédit Agricole, SBM) en environnement Drupal.",
         "Responsable du delivery de bout en bout, du cadrage à la mise en production et au transfert vers le support.",
@@ -98,6 +117,11 @@ export default function Page() {
       role: "Chef de Projet E-Commerce B2B",
       company: "Parrot",
       badge: "Prestashop • International",
+      challenge:
+        "Développer le site e-commerce B2B sur plusieurs marchés tout en coordonnant merchandising, équipes commerciales et filiales locales.",
+      impact:
+        "Multiplication par 3 du chiffre d’affaires européen et +50% de portefeuille client en 2016.",
+      tags: ["B2B", "International", "Prestashop", "Merchandising", "CA"],
       points: [
         "Élaboration de la stratégie de développement du site E-Commerce B2B sur l’Europe, l’Asie et les États-Unis.",
         "Gestion du merchandising et coordination avec les équipes commerciales terrain et les filiales locales.",
@@ -109,6 +133,11 @@ export default function Page() {
       role: "Chef de Projet E-Commerce",
       company: "Parrot",
       badge: "Prestashop • B2C",
+      challenge:
+        "Piloter les opérations e-commerce B2C et marketplaces en gardant une cohérence commerciale et opérationnelle.",
+      impact:
+        "Stabilisation du back office, campagnes promotionnelles mieux structurées et coordination renforcée entre plateformes.",
+      tags: ["B2C", "Marketplaces", "Prestashop", "Promotions", "Back office"],
       points: [
         "Responsable du back office des sites B2C store.parrot.com puis parrot.com.",
         "Gestion du merchandising multi-plateformes (B2C, B2B, Ebay, Priceminister) et des campagnes promotionnelles.",
@@ -131,32 +160,38 @@ export default function Page() {
 
   const toolCategories = [
     {
-      label: "Gestion de projet",
-      items: ["Jira", "Confluence", "Monday", "Microsoft Teams", "SharePoint", "Slack", "Redmine", "Airtable", "Asana"],
+      label: "Pilotage",
+      items: ["Jira", "Confluence", "Miro", "MS Planner"],
     },
     {
-      label: "Design",
-      items: ["Figma", "InVision", "Sketch", "Zeplin", "Miro"],
+      label: "Produit et conception",
+      items: ["Figma", "Zeplin", "Storybook"],
     },
     {
       label: "CMS & E-commerce",
-      items: [
-        "Adobe Experience Manager",
-        "Prismic",
-        "Drupal",
-        "Drupal Commerce",
-        "Shopify",
-        "WordPress",
-        "Prestashop",
-        "Hybris",
-        "eBay",
-        "Priceminister",
-      ],
+      items: ["Drupal", "AEM", "Prismic", "Shopify", "Prestashop", "Hybris"],
     },
     {
-      label: "Analytics",
-      items: ["Google Analytics", "SEMrush", "Looker Studio", "Piano Analytics"],
+      label: "Data et performance",
+      items: ["GA4", "Piano Analytics", "Looker Studio", "SEMrush"],
     },
+  ];
+
+  const projectTitles = {
+    aldi: "Industrialiser plusieurs activations digitales retail sans perdre la cohérence de marque",
+    "bnp-paribas": "Faire avancer des parcours web et mobile dans un écosystème bancaire complexe",
+    bforbank: "Repenser une expérience digitale bancaire en conciliant enjeux business, UX et contraintes techniques",
+    dataiku: "Structurer la performance web et SEO d’un acteur tech international",
+    printemps: "Migrer un site retail et intégrer un programme de fidélité sans rupture de parcours",
+    parrot: "Piloter un écosystème e-commerce B2B et B2C sur plusieurs marchés",
+  };
+
+  const workingPrinciples = [
+    "Je rends les sujets complexes compréhensibles.",
+    "Je ne laisse pas les risques cachés jusqu’au dernier moment.",
+    "Je sais challenger sans bloquer.",
+    "Je crée de la structure sans ajouter de lourdeur.",
+    "Je reste orienté solution, même lorsque le cadre n’est pas parfait.",
   ];
 
   const cardTreatments = [
@@ -169,10 +204,11 @@ export default function Page() {
   ];
 
   const navLinks = [
-    ["Profil", "#profil"],
+    ["Déblocages", "#profil"],
     ["Expertise", "#expertise"],
     ["Expériences", "#experiences"],
     ["Projets", "#projects"],
+    ["Méthode", "#method"],
     ["Clients", "#clients"],
     ["Stack", "#stack"],
     ["Contact", "#contact"],
@@ -261,37 +297,28 @@ export default function Page() {
         <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="grid items-start gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-8">
             <div className="order-2 lg:order-1">
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[10px] uppercase tracking-[0.22em] text-white/70 sm:px-4 sm:text-xs">
-                <BadgeCheck size={14} className="text-accent-light" />
-                Disponible pour mission / CDI
-              </div>
-
               <h1 className="font-display max-w-5xl text-4xl font-semibold leading-[1.02] tracking-tight sm:text-5xl md:text-6xl xl:text-[4.5rem]">
-                Je pilote les projets digitaux <span className="text-white/40">avec une logique</span>{" "}
-                <span className="text-accent-light">produit, business et delivery</span>
+                Je transforme les sujets digitaux complexes en projets cadrés, alignés et réellement livrés.
               </h1>
 
               <p className="mt-6 max-w-2xl text-sm leading-7 text-white/72 sm:text-base md:text-lg">
-                Profil senior à la croisée du cadrage, de la coordination, de la vision produit et de l’exécution. J’interviens sur des contextes web, e-commerce et transformation digitale où il faut aligner les enjeux métier, les équipes et la performance.
+                Chef de Projet Digital & Product Owner Senior, j’interviens lorsqu’il faut remettre de la clarté entre les enjeux métier, les équipes UX et tech, les dépendances et la réalité du delivery.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a
-                  href="mailto:david.mecorvin@hotmail.fr"
+                  href="#projects"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-accent-light px-5 py-3 text-sm font-semibold text-midnight transition hover:scale-[1.02]"
+                >
+                  Voir mes projets
+                  <ArrowUpRight size={16} />
+                </a>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-accent-light hover:bg-white/5"
                 >
                   <Mail size={18} />
                   Me contacter
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/david-mecorvin-chef-de-projet-digital/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-accent-light hover:bg-white/5"
-                >
-                  <Linkedin size={18} />
-                  Voir LinkedIn
-                  <ArrowUpRight size={16} />
                 </a>
               </div>
 
@@ -347,32 +374,32 @@ export default function Page() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <Reveal className="grid gap-5 lg:grid-cols-[0.78fr_1.22fr]">
             <div>
-              <p className="text-xs uppercase tracking-[0.24em] text-accent sm:text-sm">Profil</p>
+              <p className="text-xs uppercase tracking-[0.24em] text-accent sm:text-sm">Ce que je débloque</p>
               <h2 className="font-display mt-3 max-w-md text-2xl font-semibold leading-[1.05] sm:text-3xl md:text-4xl">
-                Une approche structurée, business et orientée exécution
+                Remettre de la clarté là où le projet devient difficile à lire
               </h2>
             </div>
-            <div className="rounded-[1.6rem] border border-midnight/10 bg-midnight/[0.03] p-6 text-midnight/75 sm:rounded-[2rem] sm:p-8">
+            <div className="border-y border-midnight/10 py-6 text-midnight/75 sm:py-8">
               <p className="text-sm leading-7 sm:text-base sm:leading-8">
-                Fort de +12 ans d’expérience en gestion de projet digital, dont plusieurs années chez l’annonceur et en agence, j’interviens sur l’ensemble du cycle de vie du projet : cadrage, coordination, conception, développement, recette et mise en production.
+                Mon rôle n’est pas seulement de suivre un planning. J’interviens quand il faut clarifier le périmètre, rendre les dépendances visibles et donner aux équipes un cadre qui permet vraiment d’avancer.
               </p>
               <p className="mt-4 text-sm leading-7 sm:text-base sm:leading-8">
-                J’ai évolué sur des environnements variés — banque, retail, data, e-commerce — avec un fil rouge : faire avancer les sujets, aligner les interlocuteurs, sécuriser la delivery et garder une vraie exigence de cohérence globale.
+                Banque, retail, e-commerce, data, grands comptes et environnements internationaux : le fil rouge reste le même, transformer la complexité en décisions, livrables et jalons maîtrisés.
               </p>
             </div>
           </Reveal>
 
-          <div className="mt-5 grid gap-3 sm:mt-8 sm:gap-4 md:grid-cols-3">
-            {highlights.map((item) => (
+          <div className="mt-8 border-t border-midnight/10">
+            {blockers.map((item) => (
               <div
                 key={item.title}
-                className="rounded-[1.4rem] border border-midnight/10 bg-midnight/[0.03] p-5 sm:rounded-[1.6rem] sm:p-6"
+                className="grid gap-4 border-b border-midnight/10 py-6 md:grid-cols-[0.18fr_0.32fr_0.5fr] md:items-start"
               >
-                <div className="flex items-center gap-3 text-accent">
-                  {item.icon}
-                  <h3 className="text-sm font-semibold text-midnight sm:text-base">{item.title}</h3>
-                </div>
-                <p className="mt-3 text-xs leading-6 text-midnight/68 sm:mt-4 sm:text-sm sm:leading-7">
+                <p className="font-display text-sm font-semibold text-accent">{item.number}</p>
+                <h3 className="font-display text-2xl font-semibold leading-tight text-midnight sm:text-3xl">
+                  {item.title}
+                </h3>
+                <p className="text-sm leading-7 text-midnight/68 sm:text-base">
                   {item.text}
                 </p>
               </div>
@@ -387,11 +414,11 @@ export default function Page() {
             <div>
               <p className="text-xs uppercase tracking-[0.24em] text-accent-light sm:text-sm">Expertise</p>
               <h2 className="font-display mt-3 max-w-xl text-2xl font-semibold leading-[1.05] sm:text-3xl md:text-4xl">
-                Les briques qui font tenir un projet
+                De l’idée à la mise en production
               </h2>
             </div>
             <div className="hidden items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-white/55 lg:inline-flex">
-              <Sparkles size={16} className="text-accent-light" />
+              <Briefcase size={16} className="text-accent-light" />
               CP digital senior • PO web
             </div>
           </Reveal>
@@ -430,10 +457,23 @@ export default function Page() {
                 className={`group relative overflow-hidden rounded-[1.6rem] p-6 transition hover:-translate-y-1 ${cardTreatments[i % cardTreatments.length]}`}
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] opacity-70">
-                  {project.category}
+                  {project.title} • {project.sector}
                 </p>
-                <h3 className="font-display mt-2 text-2xl font-semibold">{project.title}</h3>
-                <p className="mt-3 text-sm leading-6 opacity-80">{project.shortDescription}</p>
+                <h3 className="font-display mt-3 text-2xl font-semibold leading-tight">
+                  {projectTitles[project.slug] ?? project.title}
+                </h3>
+                <div className="mt-5 space-y-3 text-sm leading-6 opacity-80">
+                  <p><span className="font-semibold">Challenge.</span> {project.challenge}</p>
+                  <p><span className="font-semibold">Rôle.</span> {project.roleLabel}</p>
+                  <p><span className="font-semibold">Impact.</span> {project.results?.[0]}</p>
+                </div>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {[project.category, project.duration, ...(project.stack ?? []).slice(0, 2)].filter(Boolean).map((tag) => (
+                    <span key={tag} className="rounded-full border border-current/15 px-3 py-1 text-xs opacity-80">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
                 <p className="mt-5 inline-flex items-center gap-1 text-sm font-semibold">
                   Voir le projet
                   <ArrowUpRight size={14} className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -441,6 +481,29 @@ export default function Page() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="method" className="scroll-mt-24 bg-surface py-14 text-midnight sm:py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+          <Reveal as="div" className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr]">
+            <div>
+              <p className="text-xs uppercase tracking-[0.24em] text-accent sm:text-sm">Méthode</p>
+              <h2 className="font-display mt-3 max-w-lg text-2xl font-semibold leading-[1.05] sm:text-3xl md:text-4xl">
+                Ma manière de faire avancer les projets
+              </h2>
+            </div>
+            <div className="border-t border-midnight/10">
+              {workingPrinciples.map((item) => (
+                <p
+                  key={item}
+                  className="border-b border-midnight/10 py-5 font-display text-xl font-semibold leading-snug text-midnight/86 sm:text-2xl"
+                >
+                  {item}
+                </p>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -503,6 +566,9 @@ export default function Page() {
               </div>
             ))}
           </div>
+          <p className="mt-10 max-w-2xl border-t border-white/10 pt-6 text-sm leading-7 text-white/58 sm:text-base">
+            Je sélectionne les outils en fonction de la gouvernance, des équipes et du niveau de maturité du projet.
+          </p>
         </div>
       </section>
 
@@ -513,10 +579,10 @@ export default function Page() {
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-10">
           <p className="text-xs uppercase tracking-[0.24em] text-accent sm:text-sm">Contact</p>
           <h2 className="font-display mt-4 text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
-            Vous cherchez un CP / PO capable de cadrer, structurer et faire avancer les sujets ?
+            Un projet complexe, une refonte à cadrer ou un delivery à remettre sur les rails ?
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-midnight/70 sm:text-base sm:leading-8">
-            Je peux intervenir sur des contextes de refonte, optimisation de parcours, backlog produit, pilotage de delivery, coordination multi-interlocuteurs et projets web à fort enjeu métier.
+            Échangeons sur le contexte, les points de blocage et la meilleure manière de faire avancer le sujet.
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
@@ -525,7 +591,7 @@ export default function Page() {
               className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:scale-[1.02] hover:bg-midnight"
             >
               <Mail size={18} />
-              david.mecorvin@hotmail.fr
+              Me contacter
             </a>
             <a
               href="https://www.linkedin.com/in/david-mecorvin-chef-de-projet-digital/"

@@ -4,10 +4,11 @@ import { useState } from "react";
 import { Menu, X, Linkedin } from "lucide-react";
 
 const LINKS = [
-  ["Profil", "#profil"],
+  ["Déblocages", "#profil"],
   ["Expertise", "#expertise"],
   ["Expériences", "#experiences"],
   ["Projets", "#projects"],
+  ["Méthode", "#method"],
   ["Clients", "#clients"],
   ["Stack", "#stack"],
   ["Contact", "#contact"],

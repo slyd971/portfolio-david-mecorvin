@@ -11,21 +11,48 @@ function ExperienceCard({ exp }) {
       <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
         <div>
           <p className="text-[11px] uppercase tracking-[0.22em] text-midnight/65 sm:text-xs">{exp.period}</p>
-          <h3 className="mt-2 text-xl font-semibold text-midnight sm:text-2xl">{exp.role}</h3>
-          <p className="mt-2 text-sm text-midnight/65 sm:text-base">{exp.company}</p>
+          <h3 className="mt-2 font-display text-2xl font-semibold text-midnight sm:text-3xl">{exp.company}</h3>
+          <p className="mt-2 text-sm font-medium text-midnight/70 sm:text-base">
+            {exp.role} — {exp.badge}
+          </p>
         </div>
         <div className="w-fit rounded-full border border-accent/25 bg-accent/10 px-3 py-2 text-xs text-accent sm:px-4 sm:text-sm">
           {exp.badge}
         </div>
       </div>
 
-      <div className="mt-5 grid gap-3 sm:mt-6">
-        {exp.points.map((point) => (
-          <div key={point} className="flex gap-3 rounded-2xl border border-midnight/8 bg-white px-4 py-4">
-            <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-accent" />
-            <p className="text-xs leading-6 text-midnight/74 sm:text-sm sm:leading-7">{point}</p>
-          </div>
-        ))}
+      <div className="mt-6 grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="border-t border-midnight/10 pt-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Challenge</p>
+          <p className="mt-2 text-sm leading-7 text-midnight/72">{exp.challenge}</p>
+        </div>
+        <div className="border-t border-midnight/10 pt-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Mon rôle</p>
+          <ul className="mt-2 space-y-2 text-sm leading-7 text-midnight/72">
+            {exp.points.map((point) => (
+              <li key={point} className="flex gap-3">
+                <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="border-t border-midnight/10 pt-4 lg:col-span-2">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Impact</p>
+          <p className="mt-2 text-sm leading-7 text-midnight/72">{exp.impact}</p>
+          {exp.tags && (
+            <div className="mt-4 flex flex-wrap gap-2">
+              {exp.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-midnight/10 bg-white px-3 py-1.5 text-xs text-midnight/68"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </article>
   );
