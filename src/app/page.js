@@ -19,7 +19,7 @@ import Reveal from "@/components/Reveal";
 export default function Page() {
   const heroStats = [
     { value: "12+", label: "années en gestion de projet digital" },
-    { value: "10", label: "environnements clients et secteurs adressés" },
+    { value: "30+", label: "projets web / mobile / refonte" },
   ];
   const heroLabels = [
     { value: "Agile", label: "Scrum, Kanban, gouvernance produit" },
@@ -296,9 +296,9 @@ export default function Page() {
               </div>
 
               <div className="mt-10 flex flex-wrap items-end gap-6 sm:gap-8">
-                <div className="flex flex-wrap gap-5 sm:gap-7">
+                <div className="grid w-full grid-cols-2 gap-4 sm:flex sm:w-auto sm:flex-wrap sm:gap-7">
                   {heroStats.map((stat) => (
-                    <div key={stat.label} className="max-w-[11rem]">
+                    <div key={stat.label} className="min-w-0 sm:max-w-[11rem]">
                       <div className="font-display text-4xl font-semibold text-accent-light sm:text-5xl">
                         {stat.value}
                       </div>
