@@ -429,23 +429,7 @@ export default function Page() {
                 href={`/projects/${project.slug}`}
                 className={`group relative overflow-hidden rounded-[1.6rem] p-6 transition hover:-translate-y-1 ${cardTreatments[i % cardTreatments.length]}`}
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white p-2 shadow-sm">
-                  {project.logos ? (
-                    <Image
-                      src={project.logos}
-                      alt={`Logo ${project.title}`}
-                      width={32}
-                      height={32}
-                      className="h-8 w-8 object-contain"
-                    />
-                  ) : (
-                    <span className="text-sm font-semibold text-black/70">
-                      {project.title.slice(0, 2).toUpperCase()}
-                    </span>
-                  )}
-                </div>
-
-                <p className="mt-5 text-xs font-semibold uppercase tracking-[0.2em] opacity-70">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] opacity-70">
                   {project.category}
                 </p>
                 <h3 className="font-display mt-2 text-2xl font-semibold">{project.title}</h3>
