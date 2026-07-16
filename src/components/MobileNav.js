@@ -9,7 +9,6 @@ const LINKS = [
   ["Expériences", "#experiences"],
   ["Projets", "#projects"],
   ["Méthode", "#method"],
-  ["Clients", "#clients"],
   ["Stack", "#stack"],
   ["Contact", "#contact"],
 ];

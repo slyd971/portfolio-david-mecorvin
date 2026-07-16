@@ -209,7 +209,6 @@ export default function Page() {
     ["Expériences", "#experiences"],
     ["Projets", "#projects"],
     ["Méthode", "#method"],
-    ["Clients", "#clients"],
     ["Stack", "#stack"],
     ["Contact", "#contact"],
   ];
@@ -370,6 +369,26 @@ export default function Page() {
         </div>
       </section>
 
+      <section aria-label="Clients avec lesquels j’ai travaillé" className="border-y border-midnight/10 bg-surface py-5 text-midnight">
+        <div className="mx-auto grid max-w-7xl gap-4 px-4 sm:px-6 lg:grid-cols-[0.28fr_0.72fr] lg:px-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
+            Clients avec lesquels j’ai travaillé
+          </p>
+          <div className="overflow-hidden">
+            <div className="client-marquee flex items-center gap-8">
+              {[...clients, ...clients].map((client, index) => (
+                <span
+                  key={`${client}-${index}`}
+                  className="font-display whitespace-nowrap text-lg font-semibold text-midnight/78 sm:text-xl"
+                >
+                  {client}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="profil" className="scroll-mt-24 bg-surface py-14 text-midnight sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <Reveal className="grid gap-5 lg:grid-cols-[0.78fr_1.22fr]">
@@ -504,33 +523,6 @@ export default function Page() {
               ))}
             </div>
           </Reveal>
-        </div>
-      </section>
-
-      <section id="clients" className="scroll-mt-24 bg-surface py-14 text-midnight sm:py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="grid gap-6 lg:grid-cols-[0.78fr_1.22fr] lg:gap-8">
-            <Reveal as="div">
-              <p className="text-xs uppercase tracking-[0.24em] text-accent sm:text-sm">Clients & environnements</p>
-              <h2 className="font-display mt-3 max-w-xs text-2xl font-semibold leading-[1.05] sm:text-3xl md:text-4xl">
-                Des contextes exigeants, des interlocuteurs variés
-              </h2>
-              <p className="mt-4 text-sm leading-7 text-midnight/68 sm:mt-5 sm:text-base sm:leading-8">
-                Banque, retail, data, e-commerce, grands comptes, annonceurs et agence : un mix qui renforce ma lecture des enjeux business et opérationnels.
-              </p>
-            </Reveal>
-
-            <div className="flex flex-wrap items-center gap-x-10 gap-y-6 border-t border-midnight/10 pt-8 lg:border-t-0 lg:border-l lg:pl-10 lg:pt-0">
-              {clients.map((client) => (
-                <span
-                  key={client}
-                  className="font-display text-xl font-semibold text-midnight/85 transition hover:text-accent sm:text-2xl"
-                >
-                  {client}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
