@@ -491,7 +491,7 @@ export default function Page() {
           <div className="absolute bottom-0 left-0 h-32 w-32 rounded-full bg-[#7A431C]/20 blur-3xl sm:h-40 sm:w-40" />
 
           <div className="relative">
-            <p className="text-xs uppercase tracking-[0.24em] text-black/55 sm:text-sm">Contact</p>
+            <p className="text-xs uppercase tracking-[0.24em] text-black/70 sm:text-sm">Contact</p>
             <h2 className="font-serif mt-3 max-w-3xl text-2xl font-semibold leading-tight sm:mt-4 sm:text-3xl md:text-5xl md:leading-tight">
               Vous cherchez un CP / PO capable de cadrer, structurer et faire avancer les sujets ?
             </h2>
