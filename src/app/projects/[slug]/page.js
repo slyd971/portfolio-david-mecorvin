@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, Linkedin, Mail } from "lucide-react";
 import { getProjectBySlug, projects } from "@/data/projects";
 import ProjectNav from "@/components/ProjectNav";
+import { siteName, siteUrl, linkedinUrl } from "@/lib/site";
 
 export function generateStaticParams() {
   return projects.map((project) => ({
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }) {
     return {};
   }
 
-  const title = `${project.title} — ${project.category} | David Mecorvin`;
+  const title = `${project.title} — ${project.category}`;
   const description = project.metaDescription ?? project.shortDescription;
 
   return {
@@ -31,6 +32,8 @@ export async function generateMetadata({ params }) {
       title,
       description,
       url: `/projects/${project.slug}`,
+      siteName,
+      locale: "fr_FR",
       type: "article",
     },
     twitter: {
@@ -92,8 +95,9 @@ export default async function ProjectPage({ params }) {
     author: {
       "@type": "Person",
       name: "David Mecorvin",
-      url: "https://portfolio-david-mecorvin.vercel.app",
+      url: siteUrl,
     },
+    url: `${siteUrl}/projects/${project.slug}`,
   };
 
   return (
@@ -114,7 +118,7 @@ export default async function ProjectPage({ params }) {
           </Link>
 
           <a
-            href="https://www.linkedin.com/in/david-mecorvin-chef-de-projet-digital/"
+            href={linkedinUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden items-center gap-2 rounded-full border border-accent-light/30 bg-accent-light/10 px-4 py-2 text-sm font-semibold text-white transition hover:border-accent-light hover:bg-accent-light/20 sm:inline-flex"
@@ -293,7 +297,7 @@ export default async function ProjectPage({ params }) {
                 </a>
 
                 <a
-                  href="https://www.linkedin.com/in/david-mecorvin-chef-de-projet-digital/"
+                  href={linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-accent-light hover:bg-white/5"

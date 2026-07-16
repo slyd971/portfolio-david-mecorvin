@@ -1,4 +1,4 @@
-const siteUrl = "https://portfolio-david-mecorvin.vercel.app";
+import { siteUrl } from "@/lib/site";
 
 export default function robots() {
   return {

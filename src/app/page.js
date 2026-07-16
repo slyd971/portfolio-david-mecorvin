@@ -11,6 +11,7 @@ import MobileNav from "@/components/MobileNav";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 import ExpertiseList from "@/components/ExpertiseList";
 import Reveal from "@/components/Reveal";
+import { siteUrl, linkedinUrl } from "@/lib/site";
 
 export default function Page() {
   const heroStats = [
@@ -218,8 +219,8 @@ export default function Page() {
     "@type": "Person",
     name: "David Mecorvin",
     jobTitle: "Chef de Projet Digital / Product Owner Senior",
-    url: "https://portfolio-david-mecorvin.vercel.app",
-    sameAs: ["https://www.linkedin.com/in/david-mecorvin-chef-de-projet-digital/"],
+    url: siteUrl,
+    sameAs: [linkedinUrl],
     knowsAbout: [
       "Gestion de projet digital",
       "Product Ownership",
@@ -264,7 +265,7 @@ export default function Page() {
 
           <div className="flex items-center gap-2">
             <a
-              href="https://www.linkedin.com/in/david-mecorvin-chef-de-projet-digital/"
+              href={linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden items-center gap-2 rounded-full border border-accent-light/30 bg-accent-light/10 px-4 py-2 text-sm font-semibold text-white transition hover:scale-[1.02] hover:border-accent-light hover:bg-accent-light/20 sm:inline-flex"
@@ -587,7 +588,7 @@ export default function Page() {
               Me contacter
             </a>
             <a
-              href="https://www.linkedin.com/in/david-mecorvin-chef-de-projet-digital/"
+              href={linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-midnight/15 px-6 py-3 text-sm font-semibold text-midnight transition hover:border-accent hover:bg-accent/5"

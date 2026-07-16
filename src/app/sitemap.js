@@ -1,6 +1,5 @@
 import { projects } from "@/data/projects";
-
-const siteUrl = "https://portfolio-david-mecorvin.vercel.app";
+import { siteUrl } from "@/lib/site";
 
 export default function sitemap() {
   const projectEntries = projects.map((project) => ({

@@ -1,5 +1,6 @@
 import { Space_Grotesk, IBM_Plex_Sans } from "next/font/google";
 import "../styles/globals.css";
+import { siteUrl, siteName, siteTitle, siteDescription, siteKeywords } from "@/lib/site";
 
 const grotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -15,30 +16,40 @@ const plexSans = IBM_Plex_Sans({
   display: "swap",
 });
 
-const siteUrl = "https://portfolio-david-mecorvin.vercel.app";
-const title = "David Mecorvin — Chef de Projet Digital & Product Owner Senior";
-const description =
-  "Portfolio de David Mecorvin, Chef de Projet Digital et Product Owner Senior spécialisé en banque, retail, e-commerce, delivery et projets digitaux complexes.";
-
 export const metadata = {
   metadataBase: new URL(siteUrl),
-  title,
-  description,
+  title: {
+    default: siteTitle,
+    template: "%s | David Mecorvin",
+  },
+  description: siteDescription,
+  keywords: siteKeywords,
+  authors: [{ name: "David Mecorvin", url: siteUrl }],
+  creator: "David Mecorvin",
   alternates: {
     canonical: "/",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
+  },
   openGraph: {
-    title,
-    description,
+    title: siteTitle,
+    description: siteDescription,
     url: siteUrl,
-    siteName: "David Mecorvin — Portfolio",
+    siteName,
     locale: "fr_FR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title,
-    description,
+    title: siteTitle,
+    description: siteDescription,
   },
 };
 

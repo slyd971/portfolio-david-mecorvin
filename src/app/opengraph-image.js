@@ -65,7 +65,7 @@ export default async function Image() {
             maxWidth: "980px",
           }}
         >
-          Je pilote les projets digitaux avec une logique produit, business et delivery
+          Je transforme les sujets digitaux complexes en projets cadrés, alignés et réellement livrés
         </div>
 
         <div
@@ -75,7 +75,7 @@ export default async function Image() {
             marginTop: "44px",
           }}
         >
-          {["12+ ans", "Product Owner", "Banque · Retail · E-commerce"].map((label) => (
+          {["12+ ans", "Product Owner", "Banque · Retail · International"].map((label) => (
             <div
               key={label}
               style={{
