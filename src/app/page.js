@@ -154,8 +154,30 @@ export default function Page() {
     "Piano Analytics",
   ];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "David Mecorvin",
+    jobTitle: "Chef de Projet Digital / Product Owner Senior",
+    url: "https://portfolio-david-mecorvin.vercel.app",
+    sameAs: ["https://www.linkedin.com/in/david-mecorvin-chef-de-projet-digital/"],
+    knowsAbout: [
+      "Gestion de projet digital",
+      "Product Ownership",
+      "Product Management",
+      "Agile Scrum",
+      "E-commerce",
+      "Banque",
+      "Retail",
+    ],
+  };
+
   return (
     <main className="min-h-screen overflow-x-hidden text-white scroll-smooth">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="fixed inset-0 -z-30 bg-[#16110C]" />
       <div className="fixed inset-0 -z-20 bg-[radial-gradient(circle_at_top_left,rgba(224,146,44,0.22),transparent_24%),radial-gradient(circle_at_80%_10%,rgba(245,169,78,0.12),transparent_22%),radial-gradient(circle_at_bottom_right,rgba(194,112,58,0.16),transparent_20%)]" />
       <div className="fixed inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.04),transparent_18%,transparent_82%,rgba(255,255,255,0.04))]" />

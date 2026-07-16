@@ -24,6 +24,37 @@ export function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
+
+  if (!project) {
+    return {};
+  }
+
+  const title = `${project.title} — ${project.category} | David Mecorvin`;
+  const description = project.metaDescription ?? project.shortDescription;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `/projects/${project.slug}`,
+    },
+    openGraph: {
+      title,
+      description,
+      url: `/projects/${project.slug}`,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
+
 export default async function ProjectPage({ params }) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
@@ -32,8 +63,25 @@ export default async function ProjectPage({ params }) {
     notFound();
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.title,
+    description: project.metaDescription ?? project.shortDescription,
+    about: project.category,
+    author: {
+      "@type": "Person",
+      name: "David Mecorvin",
+      url: "https://portfolio-david-mecorvin.vercel.app",
+    },
+  };
+
   return (
     <main className="min-h-screen overflow-x-hidden text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="fixed inset-0 -z-30 bg-[#16110C]" />
       <div className="fixed inset-0 -z-20 bg-[radial-gradient(circle_at_top_left,rgba(224,146,44,0.20),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(194,112,58,0.16),transparent_20%)]" />
       <div className="fixed inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.04),transparent_18%,transparent_82%,rgba(255,255,255,0.04))]" />
