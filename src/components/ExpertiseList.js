@@ -37,12 +37,14 @@ export default function ExpertiseList() {
       {ITEMS.map((item, i) => {
         const isActive = active === i;
         return (
-          <div
+          <button
+            type="button"
             key={item.title}
-            tabIndex={0}
             onMouseEnter={() => setActive(i)}
             onFocus={() => setActive(i)}
-            className="group grid border-b border-white/10 py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-light focus-visible:ring-offset-2 focus-visible:ring-offset-midnight sm:py-6 md:grid-cols-[0.16fr_0.34fr_0.5fr] md:items-start md:gap-6"
+            onClick={() => setActive(i)}
+            aria-expanded={isActive}
+            className="group grid w-full border-b border-white/10 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-light focus-visible:ring-offset-2 focus-visible:ring-offset-midnight sm:py-6 md:grid-cols-[0.16fr_0.34fr_0.5fr] md:items-start md:gap-6"
           >
             <p className={`font-display text-sm font-semibold transition ${isActive ? "text-accent-light" : "text-white/35"}`}>
               {item.number}
@@ -63,7 +65,7 @@ export default function ExpertiseList() {
                 {item.detail}
               </p>
             </div>
-          </div>
+          </button>
         );
       })}
     </div>

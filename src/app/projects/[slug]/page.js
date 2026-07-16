@@ -1,21 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
-import {
-  ArrowLeft,
-  ArrowUpRight,
-  Linkedin,
-  Mail,
-  TrendingUp,
-  Target,
-  Briefcase,
-  Wrench,
-  BarChart3,
-  CheckCircle2,
-  Building2,
-  Clock3,
-  Layers3,
-} from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Linkedin, Mail } from "lucide-react";
 import { getProjectBySlug, projects } from "@/data/projects";
 import ProjectNav from "@/components/ProjectNav";
 
@@ -56,6 +41,25 @@ export async function generateMetadata({ params }) {
   };
 }
 
+function NumberedList({ items, tone = "dark" }) {
+  const textClass = tone === "light" ? "text-white/72" : "text-midnight/72";
+  const borderClass = tone === "light" ? "border-white/10" : "border-midnight/10";
+  const numberClass = tone === "light" ? "text-accent-light" : "text-accent";
+
+  return (
+    <div className={`border-t ${borderClass}`}>
+      {items.map((item, index) => (
+        <div key={item} className={`grid gap-3 border-b ${borderClass} py-4 sm:grid-cols-[0.12fr_0.88fr]`}>
+          <p className={`font-display text-sm font-semibold ${numberClass}`}>
+            {String(index + 1).padStart(2, "0")}
+          </p>
+          <p className={`text-sm leading-7 ${textClass}`}>{item}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default async function ProjectPage({ params }) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
@@ -67,6 +71,17 @@ export default async function ProjectPage({ params }) {
   const index = projects.findIndex((p) => p.slug === slug);
   const prev = index > 0 ? projects[index - 1] : null;
   const next = index < projects.length - 1 ? projects[index + 1] : null;
+
+  const projectFacts = [
+    project.sector,
+    project.duration,
+    project.roleLabel,
+  ].filter(Boolean);
+
+  const approachItems = [
+    ...(project.methodology ?? []),
+    ...(project.deliverables ?? []),
+  ];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -110,291 +125,165 @@ export default async function ProjectPage({ params }) {
         </div>
       </header>
 
-      <section className="bg-midnight py-8 text-white sm:py-10 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="rounded-[1.8rem] border border-white/10 bg-white/5 p-6 sm:rounded-[2rem] sm:p-8">
-              <p className="text-xs uppercase tracking-[0.24em] text-accent-light sm:text-sm">
-                Projet
-              </p>
+      <section className="bg-midnight py-10 text-white sm:py-14 lg:py-20">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_0.72fr] lg:px-10">
+          <div>
+            <p className="text-xs uppercase tracking-[0.24em] text-accent-light sm:text-sm">
+              Étude de cas
+            </p>
+            <h1 className="font-display mt-4 max-w-4xl text-4xl font-semibold leading-[1.02] sm:text-5xl md:text-6xl">
+              {project.title}
+            </h1>
+            <p className="mt-4 text-sm font-semibold text-accent-light sm:text-base">
+              {project.category}
+            </p>
+            <p className="mt-6 max-w-3xl text-sm leading-7 text-white/72 sm:text-base sm:leading-8">
+              {project.heroDescription}
+            </p>
 
-              <div className="mt-4 flex items-center gap-4">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white p-2 shadow-sm">
-                  {project.logos ? (
-                    <Image
-                      src={project.logos}
-                      alt={`Logo ${project.title}`}
-                      width={40}
-                      height={40}
-                      className="h-10 w-10 object-contain"
-                    />
-                  ) : (
-                    <span className="text-lg font-semibold text-black/70">
-                      {project.title.slice(0, 2).toUpperCase()}
-                    </span>
-                  )}
-                </div>
-
-                <h1 className="font-display text-3xl font-semibold sm:text-4xl md:text-5xl">
-                  {project.title}
-                </h1>
-              </div>
-
-              <p className="mt-3 text-sm font-medium text-accent-light sm:text-base">
-                {project.category}
-              </p>
-
-              <p className="mt-5 max-w-3xl text-sm leading-7 text-white/72 sm:text-base sm:leading-8">
-                {project.heroDescription}
-              </p>
-
-              <div className="mt-6 flex flex-wrap gap-2">
-                {project.sector && (
-                  <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-4 py-2 text-sm text-white/75">
-                    <Building2 size={15} className="text-accent-light" />
-                    {project.sector}
-                  </span>
-                )}
-
-                {project.duration && (
-                  <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-4 py-2 text-sm text-white/75">
-                    <Clock3 size={15} className="text-accent-light" />
-                    {project.duration}
-                  </span>
-                )}
-
-                {project.roleLabel && (
-                  <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-4 py-2 text-sm text-white/75">
-                    <Layers3 size={15} className="text-accent-light" />
-                    {project.roleLabel}
-                  </span>
-                )}
-              </div>
-            </div>
-
-            <div className="rounded-[1.8rem] border border-accent-light/20 bg-gradient-to-br from-accent to-accent-light p-6 sm:rounded-[2rem] sm:p-8">
-              <div className="flex h-full flex-col justify-between">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.24em] text-white/80 sm:text-sm">
-                    Snapshot
-                  </p>
-                  <h2 className="font-display mt-4 text-2xl font-semibold text-white">Vue d’ensemble</h2>
-                  <p className="mt-4 text-sm leading-7 text-white/85">
-                    Une lecture rapide du projet, de son périmètre et de son impact.
-                  </p>
-                </div>
-
-                {project.keyMetrics && (
-                  <div className="mt-8 grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-                    {project.keyMetrics.map((item) => (
-                      <div
-                        key={item.label}
-                        className="rounded-[1.4rem] border border-white/20 bg-white/10 p-5"
-                      >
-                        <div className="text-2xl font-semibold text-white">
-                          {item.value}
-                        </div>
-                        <div className="mt-2 text-sm leading-6 text-white/80">
-                          {item.label}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
+            <div className="mt-7 flex flex-wrap gap-2">
+              {projectFacts.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/75"
+                >
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
+
+          {project.keyMetrics && (
+            <aside className="border-t border-white/10 pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+              <p className="text-xs uppercase tracking-[0.24em] text-white/50 sm:text-sm">
+                Points de contrôle
+              </p>
+              <div className="mt-6 space-y-5">
+                {project.keyMetrics.map((item) => (
+                  <div key={item.label} className="border-b border-white/10 pb-5">
+                    <p className="font-display text-3xl font-semibold text-accent-light">
+                      {item.value}
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-white/70">{item.label}</p>
+                  </div>
+                ))}
+              </div>
+            </aside>
+          )}
         </div>
       </section>
 
       {project.results && (
-        <section className="bg-surface py-8 text-midnight sm:py-10 lg:py-16">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-            <div className="rounded-[1.8rem] border border-accent/20 bg-gradient-to-br from-accent-light/25 via-accent-light/10 to-transparent p-6 sm:rounded-[2rem] sm:p-8">
-              <div className="flex items-center gap-3">
-                <TrendingUp size={22} className="text-accent" />
-                <h2 className="font-display text-2xl font-semibold">Résultats / impact</h2>
-              </div>
-
-              <div className="mt-6 grid gap-4 md:grid-cols-3">
-                {project.results.map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-[1.4rem] border border-midnight/10 bg-white/60 p-5 backdrop-blur-sm"
-                  >
-                    <p className="text-sm leading-7 text-midnight/80">{item}</p>
-                  </div>
-                ))}
-              </div>
+        <section className="bg-surface py-10 text-midnight sm:py-14 lg:py-20">
+          <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.32fr_0.68fr] lg:px-10">
+            <div>
+              <p className="text-xs uppercase tracking-[0.24em] text-accent sm:text-sm">Résultats</p>
+              <h2 className="font-display mt-3 text-2xl font-semibold leading-tight sm:text-4xl">
+                Ce que le projet a permis de sécuriser
+              </h2>
             </div>
+            <NumberedList items={project.results} />
           </div>
         </section>
       )}
 
-      {project.challenge && (
-        <section className="bg-surface py-8 text-midnight sm:py-10 lg:py-16">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-            <div className="rounded-[1.8rem] border border-midnight/10 bg-midnight/[0.03] p-6 sm:rounded-[2rem] sm:p-8">
-              <div className="flex items-center gap-3">
-                <BarChart3 size={20} className="text-accent" />
-                <h2 className="font-display text-2xl font-semibold">Challenge</h2>
-              </div>
-              <p className="mt-4 max-w-4xl text-sm leading-7 text-midnight/72 sm:text-base sm:leading-8">
-                {project.challenge}
-              </p>
-            </div>
+      <section className="bg-surface pb-10 text-midnight sm:pb-14 lg:pb-20">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-10">
+          <div className="border-t border-midnight/10 pt-6">
+            <p className="text-xs uppercase tracking-[0.24em] text-accent sm:text-sm">Contexte</p>
+            <p className="mt-4 text-sm leading-7 text-midnight/72 sm:text-base sm:leading-8">
+              {project.context}
+            </p>
           </div>
-        </section>
-      )}
 
-      <section className="bg-midnight py-8 text-white sm:py-10 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr] lg:gap-5">
-            <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-6 sm:rounded-[2rem]">
-              <div className="flex items-center gap-3">
-                <Target size={20} className="text-accent-light" />
-                <h2 className="font-display text-xl font-semibold">Contexte</h2>
-              </div>
-              <p className="mt-4 text-sm leading-7 text-white/72">
-                {project.context}
-              </p>
-            </div>
-
-            <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-6 sm:rounded-[2rem]">
-              <div className="flex items-center gap-3">
-                <Target size={20} className="text-accent-light" />
-                <h2 className="font-display text-xl font-semibold">Objectifs</h2>
-              </div>
-              <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-7 text-white/72 marker:text-accent-light">
-                {project.objectives.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
+          <div className="border-t border-midnight/10 pt-6">
+            <p className="text-xs uppercase tracking-[0.24em] text-accent sm:text-sm">Le défi</p>
+            <p className="mt-4 text-sm leading-7 text-midnight/72 sm:text-base sm:leading-8">
+              {project.challenge}
+            </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-surface py-8 text-midnight sm:py-10 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr] lg:gap-5">
-            <div className="rounded-[1.6rem] border border-midnight/10 bg-midnight/[0.03] p-6 sm:rounded-[2rem]">
-              <div className="flex items-center gap-3">
-                <Briefcase size={20} className="text-accent" />
-                <h2 className="font-display text-xl font-semibold">Mon rôle</h2>
-              </div>
-              <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-7 text-midnight/72 marker:text-accent">
-                {project.role.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="rounded-[1.6rem] border border-midnight/10 bg-midnight/[0.03] p-6 sm:rounded-[2rem]">
-              <div className="flex items-center gap-3">
-                <Wrench size={20} className="text-accent" />
-                <h2 className="font-display text-xl font-semibold">Stack / outils</h2>
-              </div>
-
-              <div className="mt-4 flex flex-wrap gap-2">
-                {project.stack.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-midnight/10 bg-white px-4 py-2 text-sm text-midnight/72"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-
-              {project.methodology && (
-                <>
-                  <h3 className="mt-6 text-lg font-semibold text-midnight">Méthodologie</h3>
-                  <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-7 text-midnight/72 marker:text-accent">
-                    {project.methodology.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </>
-              )}
-            </div>
+      <section className="bg-midnight py-10 text-white sm:py-14 lg:py-20">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.45fr_0.55fr] lg:px-10">
+          <div>
+            <p className="text-xs uppercase tracking-[0.24em] text-accent-light sm:text-sm">
+              Ma responsabilité
+            </p>
+            <h2 className="font-display mt-3 text-2xl font-semibold leading-tight sm:text-4xl">
+              Ce que je portais concrètement
+            </h2>
           </div>
+          <NumberedList items={project.role} tone="light" />
         </div>
+
+        {approachItems.length > 0 && (
+          <div className="mx-auto mt-12 grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.45fr_0.55fr] lg:px-10">
+            <div>
+              <p className="text-xs uppercase tracking-[0.24em] text-accent-light sm:text-sm">
+                Mon approche
+              </p>
+              <h2 className="font-display mt-3 text-2xl font-semibold leading-tight sm:text-4xl">
+                Méthodes, livrables et gouvernance
+              </h2>
+            </div>
+            <NumberedList items={approachItems} tone="light" />
+          </div>
+        )}
       </section>
 
-      {(project.deliverables || project.skillsUsed) && (
-        <section className="bg-midnight py-8 text-white sm:py-10 lg:py-16">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-            <div className="grid gap-4 lg:grid-cols-2">
-              {project.deliverables && (
-                <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-6 sm:rounded-[2rem]">
-                  <div className="flex items-center gap-3">
-                    <CheckCircle2 size={20} className="text-accent-light" />
-                    <h2 className="font-display text-xl font-semibold">Livrables</h2>
-                  </div>
-                  <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-7 text-white/72 marker:text-accent-light">
-                    {project.deliverables.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {project.skillsUsed && (
-                <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-6 sm:rounded-[2rem]">
-                  <div className="flex items-center gap-3">
-                    <CheckCircle2 size={20} className="text-accent-light" />
-                    <h2 className="font-display text-xl font-semibold">Compétences mobilisées</h2>
-                  </div>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {project.skillsUsed.map((item) => (
-                      <span
-                        key={item}
-                        className="rounded-full border border-white/10 bg-black/20 px-4 py-2 text-sm text-white/72"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        </section>
-      )}
-
-      <section className="bg-surface py-8 text-midnight sm:py-10 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="rounded-[1.8rem] border border-midnight/10 bg-midnight/[0.03] p-6 sm:rounded-[2rem] sm:p-8">
-            <h2 className="font-display text-2xl font-semibold">Réalisations clés</h2>
-
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
-              {project.achievements.map((item) => (
-                <div
-                  key={item.title}
-                  className="rounded-[1.4rem] border border-midnight/10 bg-white p-5 sm:rounded-[1.5rem]"
+      <section className="bg-surface py-10 text-midnight sm:py-14 lg:py-20">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.38fr_0.62fr] lg:px-10">
+          <div>
+            <p className="text-xs uppercase tracking-[0.24em] text-accent sm:text-sm">
+              Réalisations clés
+            </p>
+            <h2 className="font-display mt-3 text-2xl font-semibold leading-tight sm:text-4xl">
+              Les points structurants du projet
+            </h2>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {project.stack.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-midnight/10 bg-white px-4 py-2 text-sm text-midnight/72"
                 >
-                  <h3 className="text-lg font-semibold text-midnight">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-midnight/70">
-                    {item.text}
-                  </p>
-                </div>
+                  {item}
+                </span>
               ))}
             </div>
+          </div>
+
+          <div className="space-y-6 border-t border-midnight/10 pt-6">
+            {project.achievements.map((item) => (
+              <article key={item.title} className="border-b border-midnight/10 pb-6">
+                <h3 className="font-display text-xl font-semibold text-midnight sm:text-2xl">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-midnight/70">{item.text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
       {project.whatItSays && (
-        <section className="bg-midnight py-8 text-white sm:py-10 lg:py-16">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-            <div className="rounded-[1.8rem] border border-white/10 bg-white/5 p-6 sm:rounded-[2rem] sm:p-8">
-              <h2 className="font-display text-2xl font-semibold">Ce que ce projet dit de moi</h2>
-              <p className="mt-4 max-w-4xl text-sm leading-7 text-white/72 sm:text-base sm:leading-8">
+        <section className="bg-midnight py-10 text-white sm:py-14 lg:py-20">
+          <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.38fr_0.62fr] lg:px-10">
+            <div>
+              <p className="text-xs uppercase tracking-[0.24em] text-accent-light sm:text-sm">
+                Prise de recul
+              </p>
+              <h2 className="font-display mt-3 text-2xl font-semibold leading-tight sm:text-4xl">
+                Ce que j’en retiens
+              </h2>
+            </div>
+            <div className="border-t border-white/10 pt-6">
+              <p className="text-sm leading-7 text-white/72 sm:text-base sm:leading-8">
                 {project.whatItSays}
               </p>
 
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a
                   href="mailto:david.mecorvin@hotmail.fr"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-accent-light px-5 py-3 text-sm font-semibold text-midnight transition hover:scale-[1.02]"

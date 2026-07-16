@@ -379,6 +379,7 @@ export default function Page() {
               {[...clients, ...clients].map((client, index) => (
                 <span
                   key={`${client}-${index}`}
+                  aria-hidden={index >= clients.length ? "true" : undefined}
                   className="font-display whitespace-nowrap text-lg font-semibold text-white/78 sm:text-xl"
                 >
                   {client}
