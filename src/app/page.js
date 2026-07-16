@@ -225,7 +225,7 @@ export default function Page() {
             <a
               href="https://www.linkedin.com/in/david-mecorvin-chef-de-projet-digital/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="hidden items-center gap-2 rounded-full border border-[#F5A94E]/30 bg-[#C2703A]/20 px-4 py-2 text-sm font-semibold text-white transition hover:scale-[1.02] hover:border-[#F5A94E] hover:bg-[#C2703A]/35 sm:inline-flex"
             >
               <Linkedin size={16} />
@@ -272,7 +272,7 @@ export default function Page() {
               <a
                 href="https://www.linkedin.com/in/david-mecorvin-chef-de-projet-digital/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:border-[#F5A94E] hover:bg-[#C2703A]/20"
               >
                 <Linkedin size={18} />
@@ -302,7 +302,7 @@ export default function Page() {
             <div className="relative overflow-hidden rounded-[1.8rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/40 backdrop-blur-2xl sm:rounded-[2.2rem]">
               <img
                 src="/photo/profil-cv.png"
-                alt="David Mecorvin"
+                alt="Portrait de David Mecorvin, Chef de Projet Digital / Product Owner"
                 className="aspect-[4/5] w-full object-cover object-top"
               />
               <div className="p-5 sm:p-6">
@@ -403,7 +403,7 @@ export default function Page() {
                 {project.logos ? (
                   <img
                     src={project.logos}
-                    alt={project.title}
+                    alt={`Logo ${project.title}`}
                     className="h-8 w-8 object-contain"
                   />
                 ) : (
@@ -502,7 +502,7 @@ export default function Page() {
               <a
                 href="https://www.linkedin.com/in/david-mecorvin-chef-de-projet-digital/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-black/15 px-5 py-3 text-sm font-semibold text-black transition hover:bg-black hover:text-white sm:px-6"
               >
                 <Linkedin size={18} />

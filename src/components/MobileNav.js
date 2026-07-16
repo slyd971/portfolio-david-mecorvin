@@ -63,7 +63,7 @@ export default function MobileNav() {
             <a
               href="https://www.linkedin.com/in/david-mecorvin-chef-de-projet-digital/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#F5A94E]/30 bg-[#C2703A]/20 px-4 py-3 text-sm font-semibold text-white transition hover:border-[#F5A94E] hover:bg-[#C2703A]/35"
             >

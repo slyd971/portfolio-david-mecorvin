@@ -106,7 +106,7 @@ export default async function ProjectPage({ params }) {
           <a
             href="https://www.linkedin.com/in/david-mecorvin-chef-de-projet-digital/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="hidden items-center gap-2 rounded-full border border-[#F5A94E]/30 bg-[#C2703A]/20 px-4 py-2 text-sm font-semibold text-white transition hover:border-[#F5A94E] hover:bg-[#C2703A]/35 sm:inline-flex"
           >
             <Linkedin size={16} />
@@ -128,7 +128,7 @@ export default async function ProjectPage({ params }) {
     {project.logos ? (
       <img
         src={project.logos}
-        alt={project.title}
+        alt={`Logo ${project.title}`}
         className="h-10 w-10 object-contain"
       />
     ) : (
@@ -263,9 +263,9 @@ export default async function ProjectPage({ params }) {
               <Target size={20} className="text-[#F5A94E]" />
               <h2 className="font-serif text-xl font-semibold">Objectifs</h2>
             </div>
-            <ul className="mt-4 space-y-3 text-sm leading-7 text-white/72">
+            <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-7 text-white/72 marker:text-[#F5A94E]">
               {project.objectives.map((item) => (
-                <li key={item}>• {item}</li>
+                <li key={item}>{item}</li>
               ))}
             </ul>
           </div>
@@ -279,9 +279,9 @@ export default async function ProjectPage({ params }) {
               <Briefcase size={20} className="text-[#F5A94E]" />
               <h2 className="font-serif text-xl font-semibold">Mon rôle</h2>
             </div>
-            <ul className="mt-4 space-y-3 text-sm leading-7 text-white/72">
+            <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-7 text-white/72 marker:text-[#F5A94E]">
               {project.role.map((item) => (
-                <li key={item}>• {item}</li>
+                <li key={item}>{item}</li>
               ))}
             </ul>
           </div>
@@ -306,9 +306,9 @@ export default async function ProjectPage({ params }) {
             {project.methodology && (
               <>
                 <h3 className="mt-6 text-lg font-semibold">Méthodologie</h3>
-                <ul className="mt-3 space-y-2 text-sm leading-7 text-white/72">
+                <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-7 text-white/72 marker:text-[#F5A94E]">
                   {project.methodology.map((item) => (
-                    <li key={item}>• {item}</li>
+                    <li key={item}>{item}</li>
                   ))}
                 </ul>
               </>
@@ -326,9 +326,9 @@ export default async function ProjectPage({ params }) {
                   <CheckCircle2 size={20} className="text-[#F5A94E]" />
                   <h2 className="font-serif text-xl font-semibold">Livrables</h2>
                 </div>
-                <ul className="mt-4 space-y-3 text-sm leading-7 text-white/72">
+                <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-7 text-white/72 marker:text-[#F5A94E]">
                   {project.deliverables.map((item) => (
-                    <li key={item}>• {item}</li>
+                    <li key={item}>{item}</li>
                   ))}
                 </ul>
               </div>
@@ -396,7 +396,7 @@ export default async function ProjectPage({ params }) {
               <a
                 href="https://www.linkedin.com/in/david-mecorvin-chef-de-projet-digital/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:border-[#F5A94E] hover:bg-[#C2703A]/20"
               >
                 <Linkedin size={18} />
