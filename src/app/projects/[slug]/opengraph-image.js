@@ -21,9 +21,9 @@ export default async function Image({ params }) {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          backgroundColor: "#16110C",
+          backgroundColor: "#0f0e2b",
           backgroundImage:
-            "radial-gradient(circle at 15% 15%, rgba(224,146,44,0.30), transparent 45%), radial-gradient(circle at 85% 85%, rgba(194,112,58,0.28), transparent 45%)",
+            "radial-gradient(circle at 15% 15%, rgba(31,36,233,0.40), transparent 45%), radial-gradient(circle at 85% 85%, rgba(109,165,255,0.28), transparent 45%)",
         }}
       >
         <div
@@ -32,7 +32,7 @@ export default async function Image({ params }) {
             fontSize: "24px",
             letterSpacing: "4px",
             textTransform: "uppercase",
-            color: "#F5A94E",
+            color: "#6DA5FF",
             marginBottom: "24px",
           }}
         >
